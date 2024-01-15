@@ -6,16 +6,75 @@
   <title>patrickHase ¯\_(ツ)_/¯</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+    :root{
+      /* from 1bit Monitor Glow by Polyducks https://lospec.com/palette-list/1bit-monitor-glow */
+      --col-01: #222323;
+      --col-02: #f0f6f0;
+    }
     body {
+      background-color: var(--col-01);
       font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+      color: var(--col-02);
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    body, main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    header, footer{
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+    }
+    header{
+      align-items: center;
+      justify-content: center;
+    }
+    svg {
+      height: 2rem;
+      width: 4rem;
+      fill: none;
+      stroke: var(--col-02);
+      stroke-width: 0.25rem;
+    }
+    footer div{
+      flex-grow: 1;
+      background-image: repeating-linear-gradient(-45deg, transparent, transparent 0.25rem, var(--col-02) 0.25rem, var(--col-02) 0.5rem);
+      border: 1px solid var(--col-02);
+    }
+    /* rotate gradient on 3rd child */
+    footer div:nth-child(3){
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 0.25rem, var(--col-02) 0.25rem, var(--col-02) 0.5rem);
     }
   </style>
 </head>
 <body>
 
-  <main>
+  <header>
+
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="50" r="45" />
+      <circle cx="75" cy="50" r="40" />
+      <circle cx="50" cy="50" r="35" />
+      <circle cx="25" cy="50" r="30" />
+    </svg>    
 
     <h1>Patrick Hase</h1>
+
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="25" cy="50" r="45" />
+      <circle cx="50" cy="50" r="40" />
+      <circle cx="75" cy="50" r="35" />
+      <circle cx="100" cy="50" r="30" />
+    </svg>
+
+  </header>
+
+  <main>
 
     <p>I'm a digital media artist, interaction designer and creative practice researcher currently focused on building stuff for web browsers.</p>
 
@@ -29,7 +88,13 @@
   </main>
 
   <footer>
-    Last Updated : 08/01/2024
+
+    <div></div>
+
+    <span>Last Updated : 15/01/2024</span>
+
+    <div></div> 
+       
   </footer>
 
   <!-- add last updated footer with webhook -->
