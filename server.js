@@ -28,8 +28,10 @@ app.post('/webhook/update', express.json({type: 'application/json'}), (req, res)
   const githubEvent = req.headers['x-github-event'];
 
   if (githubEvent === 'push'){
+    // if something pushed to main
     console.log("push")
   } else {
+    // this logs any unhandled event
     console.log(`Unhandled event: ${githubEvent}`);
   }
 });
