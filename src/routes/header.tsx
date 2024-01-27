@@ -12,7 +12,11 @@ export default function Header() {
 
       <nav>
 
+        <div className="navGap"></div>
+
         <div className="navOrnament"></div>
+
+        <div className="navGap"></div>
 
         {/* check current pathname - update class if on that link's path */}
         {loc.pathname.includes("projects") 
@@ -20,17 +24,25 @@ export default function Header() {
           :  <Link to={`projects/`} className="navTab" id="projects"> Projects </Link>
         }
 
+        <div className="navGap"></div>
+
         {loc.pathname.includes("about") 
           ?  <Link to={`about/`} className="navTab activeNavTab" id="about"> About </Link>
           :  <Link to={`about/`} className="navTab" id="about"> About </Link>
         }
+
+        <div className="navGap"></div>
         
         {loc.pathname.includes("blog") 
           ?  <Link to={`blog/`} className="navTab activeNavTab" id="blog"> Blog </Link>
           :  <Link to={`blog/`} className="navTab" id="blog"> Blog </Link>
         }
 
+        <div className="navGap"></div>
+
         <div className="navOrnament"></div>
+
+        <div className="navGap"></div>
         
       </nav>
 

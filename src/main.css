@@ -52,25 +52,95 @@ body {
 nav {
   display: flex;
   justify-content: center;
-  gap: 1rem;
   width: 100%;
   background-color: var(--col02);
+  align-items: flex-end;
 }
-.navOrnament{
+/* insert pseudo elements instead of gap to get border effect */
+.navGap {
+  width: 1rem;
+  border-bottom: var(--border);
+}
+.navOrnament {
   width: 10rem;
   flex-shrink: 1;
-  border: var(--border);
+  border-bottom: var(--border);
 }
-.navTab{
+.navTab {
   display: flex;
   justify-content: center;
   flex-grow: 1;
   border: var(--border);
   font-size: var(--headline-2);
+  margin-top: 0.5rem;
+  color: var(--col01);
 }
-.navTab:hover{
-  background-color: rgba(var(--col01-rgb), 0.2) ;
+.activeNavTab {
+  background-color: var(--col02);
+  border-bottom: 0;
+  background: linear-gradient(
+    to bottom, 
+    rgba(var(--col01-rgb), 0.2), 
+    var(--col02) 70%
+  );
+  align-self: stretch;
+  margin-top: 0rem;
 }
-.activeNavTab, .activeNavTab:hover{
-  background-color: var(--col01);
+
+/* main section */
+main {
+  padding: 1rem;
+  border: var(--border);
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      var(--col01) 0 0.5rem, 
+      var(--col02) 0.5rem
+    ) 1 100%;
+}
+
+
+
+/* animated details */
+details > summary{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--headline-2);
+}
+.detailsDisclosure{
+  width: var(--headline-2);
+  height: var(--headline-2);
+  border: 2px solid var(--col01);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: var(--col02);
+  transition: 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+line {
+  stroke: var(--col01);
+  transition: 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transform-origin: center;
+}
+/* top line */
+details[open] > summary > svg > line:nth-child(1) {
+  stroke-width: 20;
+  transform: translate(-15%,10%) rotate(45deg) scale(50%, 50%);
+}
+/* middle line */
+details[open] > summary > svg > line:nth-child(2) {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+/* bottom line */
+details[open] > summary > svg > line:nth-child(3) {
+  stroke-width: 20;
+  transform: translate(7.5%,-5%) rotate(-45deg) scale(50%, 50%);
+}
+.summaryText {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
 }
