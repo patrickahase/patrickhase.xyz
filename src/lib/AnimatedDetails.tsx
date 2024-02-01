@@ -64,7 +64,7 @@ export default function AnimatedDetails(projectProps: project) {
     }
   }
 
-  /* init effect */
+  /* init */
   useEffect(() => {
     setupAnimatedAccordion();
     return () => {
@@ -97,12 +97,22 @@ export default function AnimatedDetails(projectProps: project) {
 
       </summary>
 
-      <a href={projectProps.extLink} target="_blank">{projectProps.extLink}</a>
+      <div className="detailsContentWrapper">
 
-      <p></p>{projectProps.description}
+        <div className="detailsContentText">
+          <a href={projectProps.extLink} target="_blank">{projectProps.extLink}</a>
 
-      <p>{projectProps.title} was built using {projectProps.tech}</p>
+          <p></p>{projectProps.description}
 
+          <p><em>{projectProps.title}</em> was built using {projectProps.tech}</p>
+
+          {projectProps.githubURL &&
+            <a href={projectProps.githubURL} target="_blank">view source code</a>
+          }
+        </div>   
+
+      </div>
+      
     </details>
   )
 }
