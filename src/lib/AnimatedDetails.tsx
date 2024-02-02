@@ -1,8 +1,10 @@
-import { useEffect, useRef } from "react";
-import { project } from "../assets/projectList";
+import { useEffect, useRef, ReactNode } from "react";
 
+interface children {
+  children: ReactNode
+}
 
-export default function AnimatedDetails(projectProps: project) {
+export function AnimatedDetailsWrapper({children}: children) {
   
   /* reference to details element */
   const detailsElementRef = useRef<HTMLDetailsElement>(null);
@@ -75,44 +77,30 @@ export default function AnimatedDetails(projectProps: project) {
   return (
     <details ref={detailsElementRef}>
 
-      <summary>
-
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="detailsDisclosure">
-          <line x1="10" y1="30" x2="90" y2="30" stroke="black" strokeWidth="5" />
-          <line x1="10" y1="50" x2="90" y2="50" stroke="black" strokeWidth="5" />
-          <line x1="10" y1="70" x2="90" y2="70" stroke="black" strokeWidth="10" />
-        </svg>
-
-        <div className="summaryText">
-
-          <h3 className="projectTitle">{projectProps.title}</h3>
-
-          <div className="projectInfo">
-            <span style={{flex:1}}>{projectProps.role}</span>
-            <span>{projectProps.publisher}</span>
-            <span>{projectProps.year}</span>
-          </div>
-
-        </div>
-
-      </summary>
-
-      <div className="detailsContentWrapper">
-
-        <div className="detailsContentText">
-          <a href={projectProps.extLink} target="_blank">{projectProps.extLink}</a>
-
-          <p></p>{projectProps.description}
-
-          <p><em>{projectProps.title}</em> was built using {projectProps.tech}</p>
-
-          {projectProps.githubURL &&
-            <a href={projectProps.githubURL} target="_blank">view source code</a>
-          }
-        </div>   
-
-      </div>
+    {children}
       
     </details>
+  )
+}
+
+export function AnimatedDetailsSummary({children}: children) {
+  return (
+    <summary>
+
+      <AnimatedDetailsDisclosure />
+
+      {children}
+
+    </summary>
+  )
+}
+
+export function AnimatedDetailsDisclosure() {
+  return (
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="detailsDisclosure">
+      <line x1="10" y1="30" x2="90" y2="30" stroke="black" strokeWidth="5" />
+      <line x1="10" y1="50" x2="90" y2="50" stroke="black" strokeWidth="5" />
+      <line x1="10" y1="70" x2="90" y2="70" stroke="black" strokeWidth="10" />
+    </svg>
   )
 }
