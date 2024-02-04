@@ -12,10 +12,6 @@ export default function Root() {
         <Outlet />
       </main>
 
-      {/* <footer style={footerStyles}>
-        <p>By Patrick Hase</p>
-      </footer> */}
-
     </div>
   )
 }

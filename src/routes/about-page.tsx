@@ -24,7 +24,12 @@ export default function AboutPage(){
   return(
     <SimpleBar style={{ height: "100%" }} autoHide={false} scrollbarMinSize={32}>
       <div className="aboutContainer">
-        <img src="/patrick-hase.gif" alt="animated pixel art portrait of Patrick Hase"></img>
+        <figure className="aboutIMGWrapper">
+          <img  src="/patrick-hase.gif" alt="animated pixel art portrait of Patrick Hase" />
+          <figcaption>
+            Portrait by <a href="https://www.bachelorsoft.com/" target="_blank">Bachelor Soft</a>
+          </figcaption>
+        </figure>
         <p>
           I'm a media artist and researcher focused on digital interaction design in full-stack audio/visual web development. My practice 
           often leads to the construction of playful and collaborative browser-based interfaces grounded through my previous experiences 

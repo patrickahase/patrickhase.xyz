@@ -75,7 +75,7 @@ export function AnimatedDetailsWrapper({children}: children) {
   }, []);
 
   return (
-    <details ref={detailsElementRef}>
+    <details className="animatedDetails" ref={detailsElementRef}>
 
     {children}
       
@@ -85,7 +85,7 @@ export function AnimatedDetailsWrapper({children}: children) {
 
 export function AnimatedDetailsSummary({children}: children) {
   return (
-    <summary>
+    <summary className="animatedDetailsSummary">
 
       <AnimatedDetailsDisclosure />
 
@@ -97,10 +97,10 @@ export function AnimatedDetailsSummary({children}: children) {
 
 export function AnimatedDetailsDisclosure() {
   return (
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="detailsDisclosure">
-      <line x1="10" y1="30" x2="90" y2="30" stroke="black" strokeWidth="5" />
-      <line x1="10" y1="50" x2="90" y2="50" stroke="black" strokeWidth="5" />
-      <line x1="10" y1="70" x2="90" y2="70" stroke="black" strokeWidth="10" />
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="animatedDetailsDisclosure">
+      <line className="animatedDetailsDisclosureLine" x1="10" y1="30" x2="90" y2="30" strokeWidth="5" />
+      <line className="animatedDetailsDisclosureLine" x1="10" y1="50" x2="90" y2="50" strokeWidth="5" />
+      <line className="animatedDetailsDisclosureLine" x1="10" y1="70" x2="90" y2="70" strokeWidth="10" />
     </svg>
   )
 }
