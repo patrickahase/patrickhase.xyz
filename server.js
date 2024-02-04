@@ -20,11 +20,11 @@ const app = express();
 //app.use(cors());
 
 // serve static files from ./public
-app.use(express.static(path.join(__dirname, 'placeholder')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // serve placeholder index at root url
 app.get('/', (req, res) => {
-  res.sendFile(__dirname, '/placeholder/index.html');
+  res.sendFile(__dirname, '/dist/index.html');
 });
 
 // listen for webhook on repo main branch update
