@@ -3,7 +3,8 @@ dotenv.config();
 import express from "express";
 import path from "path";
 // allow server execution
-var exec = require('child_process').exec;
+import { exec } from "child_process";
+
 //const cors = require('cors'); // cors not installed yet
 
 const app = express();
