@@ -1,9 +1,7 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-
-require('dotenv').config();
-const express = require('express');
-const path = require('path');
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
+import path from "path";
 // allow server execution
 var exec = require('child_process').exec;
 //const cors = require('cors'); // cors not installed yet
