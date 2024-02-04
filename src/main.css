@@ -82,17 +82,31 @@ nav {
 /* insert pseudo elements instead of gap to get border effect */
 .navGap {
   width: 1rem;
+  flex-shrink: 20;
   border-bottom: var(--border);
 }
-.navOrnament {
-  width: 10rem;
-  flex-shrink: 1;
+.navOrnamentBox {
+  width: var(--headline-2);
+  flex-shrink: 2;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
   border-bottom: var(--border);
 }
+.navOrnament {  
+  height: 100%;
+  width: auto;
+  stroke: var(--col01);
+  fill: none;
+  stroke-width: 4;
+}
+
+
 .navTab {
   display: flex;
   justify-content: center;
   flex-grow: 1;
+  padding: 0 var(--headline-2);
   border: var(--border);
   margin-top: 0.5rem;
 
@@ -343,3 +357,13 @@ main {
 
 
 /* BLOG PAGE */
+
+/* very narrow */
+@media only screen and (max-width: 600px) {
+  .navGap {
+    width: 0.5rem;
+  }
+  .navOrnamentBox{
+    width: calc(var(--headline-2)*0.75);
+  }
+}

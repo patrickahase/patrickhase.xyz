@@ -14,7 +14,11 @@ export default function Header() {
 
         <div className="navGap"></div>
 
-        <div className="navOrnament"></div>
+        <div className="navOrnamentBox">
+          <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" />
+          </svg>
+        </div>
 
         <div className="navGap"></div>
 
@@ -40,7 +44,11 @@ export default function Header() {
 
         <div className="navGap"></div>
 
-        <div className="navOrnament"></div>
+        <div className="navOrnamentBox">
+          <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" />
+          </svg>
+        </div>
 
         <div className="navGap"></div>
         
