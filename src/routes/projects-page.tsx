@@ -15,6 +15,7 @@ export default function ProjectsPage(){
         <h3 className="projectSummaryTitle">{project.title}</h3>
 
         <div className="projectSummaryInfo">
+
           <span className="projectSummaryInfoRole">{project.role}</span>
           <div>
             <span>{project.publisher}&nbsp;</span>

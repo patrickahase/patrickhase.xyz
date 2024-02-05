@@ -16,7 +16,6 @@ export default function Header() {
 
         <div className="navOrnamentBox">
           <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            {/* <circle cx="50" cy="50" r="46" /> */}
             <path transform="rotate(0 50 50)"
                   d=" M 55,0
                       A 22,22 0,1,1 45,0
@@ -71,7 +70,6 @@ export default function Header() {
 
         <div className="navOrnamentBox">
           <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              {/* <circle cx="50" cy="50" r="46" /> */}
               <path transform="rotate(0 50 50)"
                     d=" M 55,0
                         A 22,22 0,1,1 45,0

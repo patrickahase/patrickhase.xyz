@@ -182,7 +182,7 @@ main {
 .animatedDetails > .animatedDetailsSummary {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: calc(var(--headline-1)/2);
   padding-left: 1rem;
 
   font-size: var(--headline-2);
@@ -192,6 +192,7 @@ main {
 }
 .animatedDetailsDisclosure{
   width: var(--headline-2);
+  flex-basis: var(--headline-2);
   height: auto;
   aspect-ratio: 1 / 1;
   border: 2px solid var(--col01);
@@ -200,20 +201,22 @@ main {
   margin-top: calc(var(--headline-2)/4);
   
   background-color: var(--col02);
+  stroke: var(--col01);
 
   transition: 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
 .animatedDetails[open] .animatedDetailsDisclosure {
-  filter: invert();
+  background-color: var(--col01);
+  stroke: var(--col02);
 }
 .animatedDetails > .animatedDetailsSummary:hover .animatedDetailsDisclosure{
-  filter: invert();
+  background-color: var(--col01);
+  stroke: var(--col02);
 
   transition: 70ms;
 }
 /* DISCLOSURE SVG LINES */
 .animatedDetailsDisclosureLine {
-  stroke: var(--col01);
   transition: 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transform-origin: center;
 }
@@ -234,7 +237,7 @@ main {
 }
 /* PROJECT ANIMATED DETAILS */
 .projectSummaryText {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -263,14 +266,12 @@ main {
   margin-left: calc(var(--headline-2)/4);
 
   font-size: var(--headline-4);
-  line-height: var(--headline-2);
     
   opacity: 0.5;
   transition: 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
 .animatedDetailsSummary:hover .projectSummaryInfo, .animatedDetails[open] .projectSummaryInfo{
   margin-left: 0;
-  font-size: var(--headline-3);
   opacity: 1;
 
   transition: 70ms;
