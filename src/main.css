@@ -182,8 +182,9 @@ main {
 .animatedDetails > .animatedDetailsSummary {
   display: flex;
   align-items: flex-start;
-  gap: calc(var(--headline-1)/2);
-  padding-left: 1rem;
+  --responsive-gap: calc(var(--headline-2)/4);
+  gap: var(--responsive-gap);
+  padding-left: var(--responsive-gap);
 
   font-size: var(--headline-2);
 
@@ -198,7 +199,7 @@ main {
   border: 2px solid var(--col01);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  margin-top: calc(var(--headline-2)/4);
+  margin: var(--responsive-gap);
   
   background-color: var(--col02);
   stroke: var(--col01);
@@ -263,7 +264,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
-  margin-left: calc(var(--headline-2)/4);
+  margin-left: var(--responsive-gap);
 
   font-size: var(--headline-4);
     
