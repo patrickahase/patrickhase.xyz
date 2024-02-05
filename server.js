@@ -23,7 +23,16 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // serve placeholder index at root url
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
+  res.sendFile(__dirname, '/dist/index.html');
+});
+app.get('/projects/*', (req, res) => {
+  res.sendFile(__dirname, '/dist/index.html');
+});
+app.get('/about/', (req, res) => {
+  res.sendFile(__dirname, '/dist/index.html');
+});
+app.get('/blog/', (req, res) => {
   res.sendFile(__dirname, '/dist/index.html');
 });
 
