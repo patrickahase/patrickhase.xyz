@@ -282,7 +282,7 @@ main {
 }
 .projectDetailsContentWrapper{
   padding-top: 1rem;
-  margin-left: calc(2rem + var(--headline-2));
+  margin-left: calc(var(--headline-2) * 2);
   display: flex;
   flex-direction: column;
   font-size: var(--headline-3);
