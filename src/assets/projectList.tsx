@@ -3,7 +3,7 @@ export interface project {
   title: string;
   publisher: string;
   year: string;
-  role: string;
+  role: JSX.Element;
   description: JSX.Element;
   extLink: string;
   tech: string;
@@ -16,7 +16,7 @@ export const projectList: project[] = [
     title: "room2@BLEED",
     publisher: "Arts House",
     year: "2022",
-    role: "Technical Direction and Co-Creator w/ Anuraag Bhatia",
+    role: <>Technical Direction and Co-Creator w/ <span className="noBreak">Anuraag Bhatia</span></>,
 
     description:
       <>
@@ -28,37 +28,37 @@ export const projectList: project[] = [
           cycles of interactive audio-visual-textural work, with music provided by a range of contributors, 
           words provided by Bhatia and visuals provided by myself. The works were presented through a custom 
           interactive platform, including user interfaces and underlying technical structures, which I implemented 
-          with additional contributions by <a href="https://localtime.place/" target="_blank">Kirby Fary</a>.
+          with additional contributions by <a className="noBreak" href="https://localtime.place/" target="_blank">Kirby Fary</a>.
         </p>
         <p>
           <em>room2 live</em> contributers:&nbsp;
-          <a href="https://ambydowns.bandcamp.com/" target="_blank">amby downs</a>,&nbsp; 
-          <a href="https://joelsherwoodspring.com/" target="_blank">Joel Spring</a>,&nbsp;
-          <a href="https://heizhima.bandcamp.com/album/h-i-zh-ma-and-friends" target="_blank">黑芝麻 (Hēi zhī ma)</a>,&nbsp;
-          <a href="https://pandawong.mmm.page/" target="_blank">Panda Wong</a>,&nbsp;
-          <a href="https://weiweihuanghuang.github.io/" target="_blank">Wei Huang</a>,&nbsp;
-          <a href="https://mohamedchamas.itch.io/" target="_blank">Mohamed Chamas</a>,&nbsp;
-          <a href="https://aartijadu.bandcamp.com/" target="_blank">Aarti Jadu</a>,&nbsp;
-          <a href="https://efishpool1.bandcamp.com/" target="_blank">e fishpool</a>,&nbsp;
-          <a href="https://www.instagram.com/heavensupermarket/" target="_blank">Sam Miers</a>,&nbsp;
-          <a href="https://daisart.bandcamp.com/" target="_blank">j</a> (DJ),&nbsp;
-          <a href="https://www.kayzar.com.au/" target="_blank">Kayzar</a> (lighting),&nbsp;
-          Jack Burton (spatial design),&nbsp;
-          <a href="https://www.instagram.com/fel__yang/" target="_blank">Felicity Yang</a> (flowers),&nbsp;
-          <a href="http://www.kategeck.com/" target="_blank">Kate Geck</a> (poster) &&nbsp;
-          <a href="https://localtime.place/" target="_blank">Kirby Fary</a> (chat mod)
+          <a className="noBreak" href="https://ambydowns.bandcamp.com/" target="_blank">amby downs</a>,&nbsp; 
+          <a className="noBreak" href="https://joelsherwoodspring.com/" target="_blank">Joel Spring</a>,&nbsp;
+          <a className="noBreak" href="https://heizhima.bandcamp.com/album/h-i-zh-ma-and-friends" target="_blank">黑芝麻 (Hēi zhī ma)</a>,&nbsp;
+          <a className="noBreak" href="https://pandawong.mmm.page/" target="_blank">Panda Wong</a>,&nbsp;
+          <a className="noBreak" href="https://weiweihuanghuang.github.io/" target="_blank">Wei Huang</a>,&nbsp;
+          <a className="noBreak" href="https://mohamedchamas.itch.io/" target="_blank">Mohamed Chamas</a>,&nbsp;
+          <a className="noBreak" href="https://aartijadu.bandcamp.com/" target="_blank">Aarti Jadu</a>,&nbsp;
+          <a className="noBreak" href="https://efishpool1.bandcamp.com/" target="_blank">e fishpool</a>,&nbsp;
+          <a className="noBreak" href="https://www.instagram.com/heavensupermarket/" target="_blank">Sam Miers</a>,&nbsp;
+          <a className="noBreak" href="https://daisart.bandcamp.com/" target="_blank">j</a> (DJ),&nbsp;
+          <span className="noBreak"><a href="https://www.kayzar.com.au/" target="_blank">Kayzar</a> (lighting)</span>,&nbsp;
+          <span className="noBreak">Jack Burton (spatial design),</span>&nbsp;
+          <span className="noBreak"><a href="https://www.instagram.com/fel__yang/" target="_blank">Felicity Yang</a> (flowers),</span>&nbsp;
+          <span className="noBreak"><a href="http://www.kategeck.com/" target="_blank">Kate Geck</a> (poster)</span> &&nbsp;
+          <span className="noBreak"><a href="https://localtime.place/" target="_blank">Kirby Fary</a> (chat mod)</span>
         </p>
         <p>
           <em>room2 async</em> contributers:&nbsp;
-          <a href="https://daisart.bandcamp.com/" target="_blank">j</a>,&nbsp; 
-          <a href="https://aartijadu.bandcamp.com/" target="_blank">Aarti Jadu</a>,&nbsp;
-          <a href="https://ambydowns.bandcamp.com/" target="_blank">amby downs</a>,&nbsp;
-          <a href="https://alexandraspence.net/" target="_blank">Alexandra Spence</a>,&nbsp;
-          <a href="https://ninabuchananmusic.bandcamp.com/" target="_blank">Nina Buchanan</a>,&nbsp;
-          <a href="https://www.instagram.com/ShaYu.wav/" target="_blank">莎瑜ShāYú</a>,&nbsp;
-          <a href="https://salllvage.bandcamp.com/" target="_blank">salllvage</a>,&nbsp;
-          <a href="https://www.instagram.com/r_rebeiro/" target="_blank">R. Rebeiro</a> &&nbsp;
-          <a href="http://www.hannahwu.com.au/" target="_blank">Hannah Wu</a>&nbsp;
+          <a className="noBreak" href="https://daisart.bandcamp.com/" target="_blank">j</a>,&nbsp; 
+          <a className="noBreak" href="https://aartijadu.bandcamp.com/" target="_blank">Aarti Jadu</a>,&nbsp;
+          <a className="noBreak" href="https://ambydowns.bandcamp.com/" target="_blank">amby downs</a>,&nbsp;
+          <a className="noBreak" href="https://alexandraspence.net/" target="_blank">Alexandra Spence</a>,&nbsp;
+          <a className="noBreak" href="https://ninabuchananmusic.bandcamp.com/" target="_blank">Nina Buchanan</a>,&nbsp;
+          <a className="noBreak" href="https://www.instagram.com/ShaYu.wav/" target="_blank">莎瑜ShāYú</a>,&nbsp;
+          <a className="noBreak" href="https://salllvage.bandcamp.com/" target="_blank">salllvage</a>,&nbsp;
+          <a className="noBreak" href="https://www.instagram.com/r_rebeiro/" target="_blank">R. Rebeiro</a> &&nbsp;
+          <a className="noBreak" href="http://www.hannahwu.com.au/" target="_blank">Hannah Wu</a>&nbsp;
         </p>
       </>,
 
@@ -72,7 +72,7 @@ export const projectList: project[] = [
     title: "being, a body",
     publisher: "LIMINAL",
     year: "2022",
-    role: "Interaction Design for Anuraag Bhatia",
+    role: <>Interaction Design for <span className="noBreak">Anuraag Bhatia</span></>,
 
     description: 
       <p>
@@ -92,7 +92,7 @@ export const projectList: project[] = [
     title: "time absorbs the feelings it produces",
     publisher: "Arts House",
     year: "2021",
-    role: "Interaction Design for Nikki Lam",
+    role: <>Interaction Design for <span className="noBreak">Nikki Lam</span></>,
     
     description: 
       <p>
@@ -113,7 +113,7 @@ export const projectList: project[] = [
     title: "thelongesthum.world",
     publisher: "Cementa",
     year: "2021",
-    role: "Interaction Design for Tina Stefanou",
+    role: <>Interaction Design for <span className="noBreak">Tina Stefanou</span></>,
     
     description: 
       <p>
@@ -133,14 +133,14 @@ export const projectList: project[] = [
   {
     id: "sunkland-xyz",
     title: "SUNKLAND.XYZ",
-    publisher: "Arts House",
+    publisher: "Disclaimer Journal",
     year: "2022",
-    role: "Technical Direction and Co-Creator w/ Anuraag Bhatia",
+    role: <>Co-Creator and Interaction Design w/ <span className="noBreak">Amias Hanley</span></>,
     
     description: 
       <p>
         <em>SUNKLAND.XYZ</em> is an interactive browser based sound work co-created 
-        with <a href="https://www.amiashanley.com/" target="_blank">Amias Hanley</a> and commissioned by Liquid 
+        with <a className="noBreak" href="https://www.amiashanley.com/" target="_blank">Amias Hanley</a> and commissioned by Liquid 
         Architecture's Disclaimer Journal. The work is an adaptation of one of Hanley's prior multi-channel audio 
         compositions into an interactive digital space for web browsers. We collaborated together on the overall 
         design and I implemented the custom movement and visualisation system.
@@ -155,13 +155,13 @@ export const projectList: project[] = [
     title: "room2.fm",
     publisher: "Various",
     year: "2021 => 22",
-    role: "Technical Direction and Co-Creator w/ Anuraag Bhatia",
+    role: <>Technical Direction and Co-Creator w/ <span className="noBreak">Anuraag Bhatia</span></>,
     
     description: 
       <>
         <p>
           <em>room2.fm</em> is an ephemeral browser based interactive audio-visual-textural work co-created with 
-          Anuraag Bhatia and originally commissioned by <a href="https://www.vidyasrajan.com/" target="_blank">Vidya Rajan</a>&nbsp;
+          Anuraag Bhatia and originally commissioned by <a className="noBreak" href="https://www.vidyasrajan.com/" target="_blank">Vidya Rajan</a>&nbsp;
           for Darebin Arts' program Exhibiting Culture Online. The work consisted of nine unique cycles of interactive 
           audio-visual-textural work, with music provided by a range of contributors, words provided by Bhatia and visuals 
           provided by myself. room2.fm was presented through a custom interactive platform, including user interfaces and 
@@ -174,45 +174,45 @@ export const projectList: project[] = [
         </p>
         <p>
           <em>room2.fm initial run</em> contributers:&nbsp;
-          <a href="https://daisart.bandcamp.com/album/uneven-specks-of-dust-that-which-we-cannot-ever-expect-to-see/" target="_blank">ju ca</a>,&nbsp;
-          <a href="https://melodyastruth.bandcamp.com/album/crude-tracer/" target="_blank">Tourist Kid</a>,&nbsp;
-          <a href="https://hex-tape.bandcamp.com/" target="_blank">Hextape</a>,&nbsp;
-          <a href="https://acopia.bandcamp.com/" target="_blank">Acopia</a>,&nbsp;
-          <a href="https://aartijadu.bandcamp.com/" target="_blank">Aarti Jadu</a>,&nbsp;
-          <a href="https://en.wikipedia.org/wiki/Diana,_Princess_of_Wales" target="_blank">Princess Diana of Wales</a>,&nbsp;
-          <a href="https://fiafiell.bandcamp.com/" target="_blank">Fia Fiell</a>,&nbsp;
-          <a href="https://ar53productions.bandcamp.com/album/uzi" target="_blank">R. Rebeiro</a>,&nbsp;
-          <a href="https://ambydowns.bandcamp.com/" target="_blank">amby downs</a>,&nbsp;
-          <a href="https://soundcloud.com/anuraag69" target="_blank">Anuraag</a> (DJ),&nbsp;
-          <a href="https://daisart.bandcamp.com/" target="_blank">j</a> (DJ) &&nbsp;
-          <a href="https://music-corin.bandcamp.com/" target="_blank">Corin</a> (DJ)
+          <a className="noBreak" href="https://daisart.bandcamp.com/album/uneven-specks-of-dust-that-which-we-cannot-ever-expect-to-see/" target="_blank">ju ca</a>,&nbsp;
+          <a className="noBreak" href="https://melodyastruth.bandcamp.com/album/crude-tracer/" target="_blank">Tourist Kid</a>,&nbsp;
+          <a className="noBreak" href="https://hex-tape.bandcamp.com/" target="_blank">Hextape</a>,&nbsp;
+          <a className="noBreak" href="https://acopia.bandcamp.com/" target="_blank">Acopia</a>,&nbsp;
+          <a className="noBreak" href="https://aartijadu.bandcamp.com/" target="_blank">Aarti Jadu</a>,&nbsp;
+          <a className="noBreak" href="https://en.wikipedia.org/wiki/Diana,_Princess_of_Wales" target="_blank">Princess Diana of Wales</a>,&nbsp;
+          <a className="noBreak" href="https://fiafiell.bandcamp.com/" target="_blank">Fia Fiell</a>,&nbsp;
+          <a className="noBreak" href="https://ar53productions.bandcamp.com/album/uzi" target="_blank">R. Rebeiro</a>,&nbsp;
+          <a className="noBreak" href="https://ambydowns.bandcamp.com/" target="_blank">amby downs</a>,&nbsp;
+          <span className="noBreak"><a href="https://soundcloud.com/anuraag69" target="_blank">Anuraag</a> (DJ)</span>,&nbsp;
+          <span className="noBreak"><a href="https://daisart.bandcamp.com/" target="_blank">j</a> (DJ)</span> &&nbsp;
+          <span className="noBreak"><a href="https://music-corin.bandcamp.com/" target="_blank">Corin</a> (DJ)</span>
         </p>
         <p>
           <em>room2.fm lockdown season</em> contributers:&nbsp;
-          <a href="https://soundcloud.com/anuraag69" target="_blank">Anuraag</a>,&nbsp; 
-          <a href="https://fiafiell.bandcamp.com/" target="_blank">Fia Fiell</a>,&nbsp;
-          <a href="https://soundcloud.com/c-frim" target="_blank">C.FRIM</a>,&nbsp;
-          <a href="https://mirasia.bandcamp.com/" target="_blank">Mirasia</a>,&nbsp;
-          <a href="https://localtime.place/" target="_blank">Local Time</a>,&nbsp;
-          <a href="https://salllvage.bandcamp.com/" target="_blank">salllvage</a>,&nbsp;
-          <a href="https://soundcloud.com/cloudyku" target="_blank">Cloudy Ku</a>,&nbsp;
-          <a href="https://soundcloud.com/iv-dripp" target="_blank">Ivy</a>,&nbsp;
-          <a href="https://femalewizard.bandcamp.com/" target="_blank">Female Wizard</a>,&nbsp;
-          <a href="https://marcusianmckenzie.com/" target="_blank">Marcus Ian McKenzie</a>,&nbsp;
-          <a href="https://alexandraspence.net/" target="_blank">Alexandra Spence</a>,&nbsp;
-          <a href="https://rhunterrrr.bandcamp.com/" target="_blank">r hunter</a>,&nbsp;
-          <a href="https://ar53productions.bandcamp.com/album/uzi" target="_blank">R. Rebeiro</a>,&nbsp;
-          <a href="https://soundcloud.com/siri-sirasith" target="_blank">siri</a>,&nbsp;
-          <a href="https://efishpool1.bandcamp.com/" target="_blank">e fishpool</a>,&nbsp;
-          <a href="https://lowflung.bandcamp.com/" target="_blank">Low Flung</a>,&nbsp;
-          <a href="https://melaniehuang.com/" target="_blank">Mel Huang</a>,&nbsp;
-          <a href="https://soundcloud.com/mgmldrm" target="_blank">miscmeg</a>,&nbsp;
-          <a href="https://emilefrankel.xyz/" target="_blank">Emile Frankel</a>,&nbsp;
-          <a href="https://soundcloud.com/hani-r" target="_blank">Hani Hanbali</a>,&nbsp;
-          <a href="https://soundcloud.com/izabel_caligiore" target="_blank">Izabel</a>,&nbsp;
-          <a href="http://www.hannahwu.com.au/" target="_blank">Hannah Wu</a>,&nbsp;
-          <a href="https://pandawong.mmm.page/" target="_blank">Panda Wong</a>, &&nbsp;
-          <a href="https://mochamas.itch.io/" target="_blank">Mohamed Chamas</a>&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/anuraag69" target="_blank">Anuraag</a>,&nbsp; 
+          <a className="noBreak" href="https://fiafiell.bandcamp.com/" target="_blank">Fia Fiell</a>,&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/c-frim" target="_blank">C.FRIM</a>,&nbsp;
+          <a className="noBreak" href="https://mirasia.bandcamp.com/" target="_blank">Mirasia</a>,&nbsp;
+          <a className="noBreak" href="https://localtime.place/" target="_blank">Local Time</a>,&nbsp;
+          <a className="noBreak" href="https://salllvage.bandcamp.com/" target="_blank">salllvage</a>,&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/cloudyku" target="_blank">Cloudy Ku</a>,&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/iv-dripp" target="_blank">Ivy</a>,&nbsp;
+          <a className="noBreak" href="https://femalewizard.bandcamp.com/" target="_blank">Female Wizard</a>,&nbsp;
+          <a className="noBreak" href="https://marcusianmckenzie.com/" target="_blank">Marcus Ian McKenzie</a>,&nbsp;
+          <a className="noBreak" href="https://alexandraspence.net/" target="_blank">Alexandra Spence</a>,&nbsp;
+          <a className="noBreak" href="https://rhunterrrr.bandcamp.com/" target="_blank">r hunter</a>,&nbsp;
+          <a className="noBreak" href="https://ar53productions.bandcamp.com/album/uzi" target="_blank">R. Rebeiro</a>,&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/siri-sirasith" target="_blank">siri</a>,&nbsp;
+          <a className="noBreak" href="https://efishpool1.bandcamp.com/" target="_blank">e fishpool</a>,&nbsp;
+          <a className="noBreak" href="https://lowflung.bandcamp.com/" target="_blank">Low Flung</a>,&nbsp;
+          <a className="noBreak" href="https://melaniehuang.com/" target="_blank">Mel Huang</a>,&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/mgmldrm" target="_blank">miscmeg</a>,&nbsp;
+          <a className="noBreak" href="https://emilefrankel.xyz/" target="_blank">Emile Frankel</a>,&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/hani-r" target="_blank">Hani Hanbali</a>,&nbsp;
+          <a className="noBreak" href="https://soundcloud.com/izabel_caligiore" target="_blank">Izabel</a>,&nbsp;
+          <a className="noBreak" href="http://www.hannahwu.com.au/" target="_blank">Hannah Wu</a>,&nbsp;
+          <a className="noBreak" href="https://pandawong.mmm.page/" target="_blank">Panda Wong</a>, &&nbsp;
+          <a className="noBreak" href="https://mochamas.itch.io/" target="_blank">Mohamed Chamas</a>&nbsp;
         </p>
       </>,
 
@@ -224,14 +224,14 @@ export const projectList: project[] = [
   {
     id: "object-animacy",
     title: "Object Animacy",
-    publisher: "Arts House",
-    year: "2022",
-    role: "Technical Direction and Co-Creator w/ Anuraag Bhatia",
+    publisher: "Avantwhatever",
+    year: "2020",
+    role: <>Co-Creator w/ <span className="noBreak">Asher Elazary</span></>,
 
     description: 
       <p>
         <em>Object Animacy</em> is a browser based interactive audio-visual-textural work for browsers co-created 
-        with <a href="https://rhunterrrr.bandcamp.com/" target="_blank">Asher Elazary</a> and commissioned by 
+        with <a className="noBreak" href="https://rhunterrrr.bandcamp.com/" target="_blank">Asher Elazary</a> and commissioned by 
         Avantwhatever as part of Avantwhatever Festival 2020. We collaborated together on the overall 
         design and its implemention.
       </p>,
@@ -245,7 +245,7 @@ export const projectList: project[] = [
     title: "Music Videos",
     publisher: "Various",
     year: "2018 => 20",
-    role: "Direction and VFX",
+    role: <>Direction and VFX</>,
     
     description: 
       <>
@@ -268,7 +268,7 @@ export const projectList: project[] = [
     title: "Infinite Fluke",
     publisher: "Arts House",
     year: "2022",
-    role: "Technical Direction and Co-Creator w/ Anuraag Bhatia",
+    role: <>Creator</>,
     
     description: 
       <p>

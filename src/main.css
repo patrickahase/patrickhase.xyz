@@ -46,7 +46,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
 
   background-color: var(--col02);
   color: var(--col01);
@@ -64,6 +63,10 @@ a:visited { color: #EE9FEE; }
   max-width: 100rem;
   height: 100vh;
   margin: 0 auto;
+}
+/* try to keep names together by avoiding wrap */
+.noBreak {
+  display:inline-block;
 }
 
 
