@@ -23,9 +23,14 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // serve placeholder index at root url
-app.get('*', (req, res) => {
-  res.sendFile(__dirname, '/dist/index.html');
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "dist/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
+
 
 // listen for webhook on repo main branch update
 app.post('/webhook/update', express.json({type: 'application/json'}), (req, res) => {
