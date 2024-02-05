@@ -16,7 +16,32 @@ export default function Header() {
 
         <div className="navOrnamentBox">
           <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="46" />
+            {/* <circle cx="50" cy="50" r="46" /> */}
+            <path transform="rotate(0 50 50)"
+                  d=" M 55,0
+                      A 22,22 0,1,1 45,0
+                      L 50,10
+                      z" />
+            <path transform="rotate(72 50 50)"
+                  d=" M 55,0
+                      A 22,22 0,1,1 45,0
+                      L 50,10
+                      z" />
+            <path transform="rotate(144 50 50)"
+                  d=" M 55,0
+                      A 22,22 0,1,1 45,0
+                      L 50,10
+                      z" />
+            <path transform="rotate(216 50 50)"
+                  d=" M 55,0
+                      A 22,22 0,1,1 45,0
+                      L 50,10
+                      z" />
+            <path transform="rotate(288 50 50)"
+                  d=" M 55,0
+                      A 22,22 0,1,1 45,0
+                      L 50,10
+                      z" />
           </svg>
         </div>
 
@@ -46,8 +71,33 @@ export default function Header() {
 
         <div className="navOrnamentBox">
           <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="46" />
-          </svg>
+              {/* <circle cx="50" cy="50" r="46" /> */}
+              <path transform="rotate(0 50 50)"
+                    d=" M 55,0
+                        A 22,22 0,1,1 45,0
+                        L 50,10
+                        z" />
+              <path transform="rotate(72 50 50)"
+                    d=" M 55,0
+                        A 22,22 0,1,1 45,0
+                        L 50,10
+                        z" />
+              <path transform="rotate(144 50 50)"
+                    d=" M 55,0
+                        A 22,22 0,1,1 45,0
+                        L 50,10
+                        z" />
+              <path transform="rotate(216 50 50)"
+                    d=" M 55,0
+                        A 22,22 0,1,1 45,0
+                        L 50,10
+                        z" />
+              <path transform="rotate(288 50 50)"
+                    d=" M 55,0
+                        A 22,22 0,1,1 45,0
+                        L 50,10
+                        z" />
+            </svg>
         </div>
 
         <div className="navGap"></div>

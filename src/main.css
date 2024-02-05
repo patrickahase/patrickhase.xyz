@@ -87,6 +87,8 @@ nav {
 }
 .navOrnamentBox {
   width: var(--headline-2);
+  height: auto;
+  aspect-ratio: 1 / 1;
   flex-shrink: 2;
   align-self: stretch;
   display: flex;
