@@ -15,9 +15,12 @@ export default function ProjectsPage(){
         <h3 className="projectSummaryTitle">{project.title}</h3>
 
         <div className="projectSummaryInfo">
-          <span style={{flex:1}}>{project.role}</span>
-          <span>{project.publisher}</span>
-          <span>{project.year}</span>
+          <span className="projectSummaryInfoRole">{project.role}</span>
+          <div>
+            <span>{project.publisher}&nbsp;</span>
+            <span>{project.year}</span>
+          </div>
+          
         </div>
 
       </div>
