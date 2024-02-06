@@ -378,7 +378,7 @@ main {
   .projectDetailsContentWrapper{
     margin-left: calc(var(--headline-2)*0.5);
   }
-  .animatedDetails[open] .projectSummaryInfo, .projectSummaryInfo{
+  .animatedDetailsSummary:hover .projectSummaryInfo, .animatedDetails[open] .projectSummaryInfo, .projectSummaryInfo{
     margin-left: calc(var(--headline-2)*-1.5);
   }
   .projectSummaryTitle{

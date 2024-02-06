@@ -1,10 +1,11 @@
 import { useEffect, useRef, ReactNode } from "react";
 
-interface children {
-  children: ReactNode
+interface AnimatedDetailsWrapperProps {
+  children: ReactNode;
+  detailsID: string;
 }
 
-export function AnimatedDetailsWrapper({children}: children) {
+export function AnimatedDetailsWrapper({children, detailsID}: AnimatedDetailsWrapperProps) {
   
   /* reference to details element */
   const detailsElementRef = useRef<HTMLDetailsElement>(null);
@@ -75,7 +76,7 @@ export function AnimatedDetailsWrapper({children}: children) {
   }, []);
 
   return (
-    <details className="animatedDetails" ref={detailsElementRef}>
+    <details className="animatedDetails" ref={detailsElementRef} id={detailsID}>
 
     {children}
       
@@ -83,9 +84,21 @@ export function AnimatedDetailsWrapper({children}: children) {
   )
 }
 
-export function AnimatedDetailsSummary({children}: children) {
+interface AnimatedDetailsSummaryProps {
+  children: ReactNode;
+  scrollToFunc: Function;
+}
+
+export function AnimatedDetailsSummary({children, scrollToFunc}: AnimatedDetailsSummaryProps) {
+
+  function handleClick(e: React.MouseEvent):void {
+    if(e.currentTarget.parentElement instanceof HTMLDetailsElement && !e.currentTarget.parentElement.open){
+      scrollToFunc(e.currentTarget);
+    }
+  }
+
   return (
-    <summary className="animatedDetailsSummary">
+    <summary className="animatedDetailsSummary" onClick={handleClick}>
 
       <AnimatedDetailsDisclosure />
 
