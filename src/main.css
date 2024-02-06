@@ -61,7 +61,7 @@ a:visited { color: #EE9FEE; }
   display: flex;
   flex-direction: column;
   max-width: 100rem;
-  height: 100vh;
+  height: 100svh;
   margin: 0 auto;
 }
 /* try to keep names together by avoiding wrap */
@@ -245,9 +245,6 @@ main {
   display: flex;
   flex-direction: column;
 }
-.animatedDetails[open] .projectSummaryText {
-  border-bottom: 1px var(--col01) dashed;
-}
 .projectSummaryTitle {
   margin: 0;
   font-size: var(--headline-2);
@@ -289,6 +286,7 @@ main {
   display: flex;
   flex-direction: column;
   font-size: var(--headline-3);
+  border-top: 1px var(--col01) dashed;
 }
 .projectDetailsContentWrapper > p {
   margin-bottom: 0;
@@ -368,7 +366,7 @@ main {
 
 
 /* BLOG PAGE */
-
+/* check for hover and change margin-left shift */
 /* very narrow */
 @media only screen and (max-width: 600px) {
   .navGap {
@@ -376,5 +374,18 @@ main {
   }
   .navOrnamentBox{
     width: calc(var(--headline-2)*0.75);
+  }
+  .projectDetailsContentWrapper{
+    margin-left: calc(var(--headline-2)*0.5);
+  }
+  .animatedDetails[open] .projectSummaryInfo, .projectSummaryInfo{
+    margin-left: calc(var(--headline-2)*-1.5);
+  }
+  .projectSummaryTitle{
+    border-bottom: 0;
+  }
+  .projectSummaryInfo{
+    border-top: 10px solid var(--col01);
+    border-image: linear-gradient(90deg, var(--col01), var(--col02)) 30;
   }
 }

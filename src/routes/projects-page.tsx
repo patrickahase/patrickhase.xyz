@@ -6,7 +6,7 @@ import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedD
 export default function ProjectsPage(){
 
   const projectDetails: React.ReactElement[] = projectList.map(project => 
-    <AnimatedDetailsWrapper>
+    <AnimatedDetailsWrapper key={project.id}>
 
       <AnimatedDetailsSummary>
 
