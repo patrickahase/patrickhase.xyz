@@ -1,11 +1,11 @@
-import { blogPostList } from '../assets/blogList.tsx';
+/* import { blogPostList } from '../assets/blogList.tsx'; */
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
-import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
+/* import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx'; */
 
 export default function BlogPage(){
  
-  const blogDetails: React.ReactElement[] = blogPostList.map(blogPost => 
+  /* const blogDetails: React.ReactElement[] = blogPostList.map(blogPost => 
     <AnimatedDetailsWrapper>
 
       <AnimatedDetailsSummary>
@@ -27,12 +27,12 @@ export default function BlogPage(){
       </div>
 
     </AnimatedDetailsWrapper>
-  );
+  ); */
 
   return(
     <SimpleBar style={{ height: "100%" }} forceVisible="y" autoHide={false} scrollbarMinSize={32}>
       <div className="projectsContainer">
-        {blogDetails}
+        {/* {blogDetails} */}
       </div>
     </SimpleBar>
   )
