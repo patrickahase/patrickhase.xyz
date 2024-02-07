@@ -389,3 +389,9 @@ main {
     border-image: linear-gradient(90deg, var(--col01), var(--col02)) 30;
   }
 }
+
+@media (prefers-reduced-motion) {
+  .animatedDetails {
+    transition: none;
+  }
+}
