@@ -8,25 +8,10 @@ export default function ProjectsPage(){
   
   const scrollableNodeRef = React.createRef<HTMLDivElement>();
 
-  function scrollElementToTop(scrollToElement: HTMLElement): void{
-    /* parent element to scroll */
-    const scrollBarElement = scrollableNodeRef.current;
-    /* distance to top for element scrolling to */
-    let scrollToElementPos = scrollToElement.getBoundingClientRect().top;
-    if(scrollBarElement){
-      /* scrollBarElement.scroll(0, scrollBarElement.scrollTop + (scrollToElementPos - scrollBarElement.getBoundingClientRect().top)); */
-      scrollBarElement.scroll({
-        top: scrollBarElement.scrollTop + (scrollToElementPos - scrollBarElement.getBoundingClientRect().top),
-        left: 0,
-        behavior: "smooth"
-      });
-    }
-  }
-
   const projectDetails: React.ReactElement[] = projectList.map(project => 
     <AnimatedDetailsWrapper key={project.id} detailsID={project.id}>
 
-      <AnimatedDetailsSummary scrollToFunc={scrollElementToTop}>
+      <AnimatedDetailsSummary scrollableDivRef={scrollableNodeRef}>
 
       <div className="projectSummaryText" id={project.id}>
 

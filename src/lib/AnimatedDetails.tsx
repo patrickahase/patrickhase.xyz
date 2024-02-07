@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, ReactNode, Ref } from "react";
 
 interface AnimatedDetailsWrapperProps {
   children: ReactNode;
@@ -86,19 +86,52 @@ export function AnimatedDetailsWrapper({children, detailsID}: AnimatedDetailsWra
 
 interface AnimatedDetailsSummaryProps {
   children: ReactNode;
-  scrollToFunc: Function;
+  scrollableDivRef: React.RefObject<HTMLDivElement>;
 }
 
-export function AnimatedDetailsSummary({children, scrollToFunc}: AnimatedDetailsSummaryProps) {
+export function AnimatedDetailsSummary({children, scrollableDivRef}: AnimatedDetailsSummaryProps) {
 
   let detailsAnimationTime: number = 0;
 
-  function handleClick(e: React.MouseEvent):void {
-    /* if event on open details element */
-    if(e.currentTarget.parentElement instanceof HTMLDetailsElement && !e.currentTarget.parentElement.open){
-      /* trigger after open - based on CSS */
-      /* scrollToFunc(e.currentTarget); */
-      setTimeout(scrollToFunc, detailsAnimationTime, e.currentTarget);
+  function animateScrollOnDetailsOpen(e: React.MouseEvent):void {
+    /* if event on details element, that isn't open, and a scrollable div exists */
+    if(scrollableDivRef){
+      const scrollableDiv = scrollableDivRef.current;
+      if(e.currentTarget.parentElement instanceof HTMLDetailsElement 
+        && !e.currentTarget.parentElement.open
+        && scrollableDiv){        
+        let start: number | undefined;
+        let previousTimeStamp: number | undefined;
+        let done: boolean = false;
+        const currentScroll: number = scrollableDiv.scrollTop;
+        const scrollTarget: number = currentScroll - scrollableDiv.getBoundingClientRect().top;
+        scrollableDiv.scroll(0, scrollTarget);
+        console.log(currentScroll, scrollTarget);
+        /* function step(timeStamp: DOMHighResTimeStamp): void {
+          if (start === undefined){
+            start = timeStamp;
+          }
+          if (start && scrollableDiv){
+            const elapsed = timeStamp - start;  
+            if(previousTimeStamp !== timeStamp){
+              const count: number = scrollTarget < 0 
+                ? Math.min(0.1 * elapsed, scrollTarget) 
+                : Math.max(-0.1 * elapsed, scrollTarget);
+              console.log(currentScroll + count)
+              //scrollableDiv.scroll(0, currentScroll + count);
+              //scrollableDiv.scroll(0, -100);
+              if (count === scrollTarget) {done = true;}
+            }
+            if (elapsed < detailsAnimationTime) {
+              previousTimeStamp = timeStamp;
+              if(!done){
+                window.requestAnimationFrame(step);
+              }
+            }
+          }
+        }
+        window.requestAnimationFrame(step); */
+      }
     }
   }
 
@@ -113,7 +146,7 @@ export function AnimatedDetailsSummary({children, scrollToFunc}: AnimatedDetails
   })
 
   return (
-    <summary className="animatedDetailsSummary" onClick={handleClick}>
+    <summary className="animatedDetailsSummary" onClick={animateScrollOnDetailsOpen}>
 
       <AnimatedDetailsDisclosure />
 
