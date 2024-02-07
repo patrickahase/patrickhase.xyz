@@ -91,11 +91,26 @@ interface AnimatedDetailsSummaryProps {
 
 export function AnimatedDetailsSummary({children, scrollToFunc}: AnimatedDetailsSummaryProps) {
 
+  let detailsAnimationTime: number = 0;
+
   function handleClick(e: React.MouseEvent):void {
+    /* if event on open details element */
     if(e.currentTarget.parentElement instanceof HTMLDetailsElement && !e.currentTarget.parentElement.open){
-      scrollToFunc(e.currentTarget);
+      /* trigger after open - based on CSS */
+      /* scrollToFunc(e.currentTarget); */
+      setTimeout(scrollToFunc, detailsAnimationTime, e.currentTarget);
     }
   }
+
+  /* on init pull transition time */
+  useEffect(() => {
+    const detailsElement = document.getElementsByClassName("animatedDetails")[0];
+    if(detailsElement){
+      const detailsStyle = getComputedStyle(detailsElement);
+      /* need to remove s then convert to float than multiple by 1000 than make int */
+      detailsAnimationTime = Math.floor(parseFloat(detailsStyle.transitionDuration.replace('s',''))*1000);
+    }
+  })
 
   return (
     <summary className="animatedDetailsSummary" onClick={handleClick}>

@@ -1,39 +1,27 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { projectList } from '../assets/projectList.tsx';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
 
 export default function ProjectsPage(){
-
-  /* simpleBar Containers px from top */
-  let simpleBarTopPos: number = 0;
   
   const scrollableNodeRef = React.createRef<HTMLDivElement>();
 
-  // calculate scroll element px from top
-  function updateSimpleBarTopPos(): void{
-    const scrollBarElement = scrollableNodeRef.current;
-    if(scrollBarElement){
-      simpleBarTopPos = scrollBarElement.getBoundingClientRect().top;
-    }
-  }
-
   function scrollElementToTop(scrollToElement: HTMLElement): void{
+    /* parent element to scroll */
+    const scrollBarElement = scrollableNodeRef.current;
+    /* distance to top for element scrolling to */
     let scrollToElementPos = scrollToElement.getBoundingClientRect().top;
-    if(scrollableNodeRef.current){
-      scrollableNodeRef.current.scroll(0, scrollToElementPos - simpleBarTopPos);
+    if(scrollBarElement){
+      /* scrollBarElement.scroll(0, scrollBarElement.scrollTop + (scrollToElementPos - scrollBarElement.getBoundingClientRect().top)); */
+      scrollBarElement.scroll({
+        top: scrollBarElement.scrollTop + (scrollToElementPos - scrollBarElement.getBoundingClientRect().top),
+        left: 0,
+        behavior: "smooth"
+      });
     }
   }
-
-  useEffect(() => {
-    updateSimpleBarTopPos();   
-    //update on resize
-    window.addEventListener("resize", updateSimpleBarTopPos);
-    return () => {
-      window.removeEventListener("resize", updateSimpleBarTopPos);
-    }
-  },[]);
 
   const projectDetails: React.ReactElement[] = projectList.map(project => 
     <AnimatedDetailsWrapper key={project.id} detailsID={project.id}>
