@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode, Ref } from "react";
+import { useEffect, useRef, ReactNode } from "react";
 
 interface AnimatedDetailsWrapperProps {
   children: ReactNode;
