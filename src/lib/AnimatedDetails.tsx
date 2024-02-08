@@ -117,7 +117,7 @@ export function AnimatedDetailsSummary({children, scrollableDivRef}: AnimatedDet
             const elapsed = timeStamp - start;  
             if(previousTimeStamp !== timeStamp){
               const count: number = Math.min(currentScroll + (scrollIncrement * elapsed), scrollTarget);
-              scrollableDiv.scroll({left: 0, top: count, behavior: "instant"});
+              scrollableDiv.scroll({left: 0, top: count, behavior: "auto"});
               if (count === scrollTarget) {done = true;}
             }
             if (elapsed < detailsAnimationTime) {
@@ -136,7 +136,7 @@ export function AnimatedDetailsSummary({children, scrollableDivRef}: AnimatedDet
             const elapsed = timeStamp - start;  
             if(previousTimeStamp !== timeStamp){
               const count: number = Math.max(currentScroll - (scrollIncrement * elapsed), scrollTarget);
-              scrollableDiv.scroll({left: 0, top: count, behavior: "instant"});
+              scrollableDiv.scroll({left: 0, top: count, behavior: "auto"});
               if (count === scrollTarget) {done = true;}
             }
             if (elapsed < detailsAnimationTime) {

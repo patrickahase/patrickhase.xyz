@@ -52,6 +52,7 @@ body {
 
   font-family: 'Work Sans', sans-serif;  
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 a:link { color: #A8A8FF; }
@@ -67,6 +68,12 @@ a:visited { color: #EE9FEE; }
 /* try to keep names together by avoiding wrap */
 .noBreak {
   display:inline-block;
+}
+/* change smooth-scrolling type */
+@supports (-webkit-font-smoothing: antialiased) {
+  html, body {
+    scroll-behavior: auto;
+  }
 }
 
 
