@@ -149,11 +149,14 @@ export function AnimatedDetailsSummary({children, scrollableDivRef}: AnimatedDet
         /* check if prefers-reduced-motion, if not then check direction of scroll */
         if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
           /* don't love this but can't work out how to get around it running after details opened */
-          setTimeout(() => {scrollableDiv.scroll(0, scrollTarget);}, 1);
+          setTimeout(() => {scrollableDiv.scroll(0, scrollTarget);scrollableDiv.style.backgroundColor = "red";}, 1);
+          
         } else {
           if(scrollTarget > currentScroll){
+            scrollableDiv.style.backgroundColor = "blue";
             window.requestAnimationFrame(scrollDownStep);
           } else {
+            scrollableDiv.style.backgroundColor = "green";
             window.requestAnimationFrame(scrollUpStep);
           }
         }       
