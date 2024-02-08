@@ -194,6 +194,9 @@ main {
   list-style: none;
   cursor: pointer;
 }
+.animatedDetailsSummary::-webkit-details-marker {
+  display: none;
+ }
 .animatedDetailsDisclosure{
   width: var(--headline-2);
   flex-basis: var(--headline-2);
