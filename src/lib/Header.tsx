@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header>
 
-      <h1>Patrick Hase</h1>
+      <HeaderLogo />
 
       <nav>
 
@@ -103,5 +103,15 @@ export default function Header() {
       </nav>
 
     </header>
+  )
+}
+
+function HeaderLogo(){
+  return (
+    <div className="headerTextWrapper">      
+      <h1 className="headerBGText">ph</h1>
+      <h1 className="headerText">&#123; patrick Hase &#125;</h1>
+    </div>
+    
   )
 }

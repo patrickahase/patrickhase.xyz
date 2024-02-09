@@ -4,6 +4,11 @@
   font-family: 'Work Sans', sans-serif;
   src: url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
 }
+/* BianZhiDai by Xiaoyuan Gao, notyourtypefoundry. Distributed by velvetyne.fr. */
+@font-face{
+  font-family: 'BianZhiDai brush';
+  src: url('./assets/fonts/bianzhidai_noBG-Brush.woff') format("woff");
+}
 *{
   box-sizing: border-box;
 }
@@ -79,6 +84,41 @@ a:visited { color: #EE9FEE; }
 
 
 /* HEADER */
+.headerTextWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.headerText{
+  /* font-weight: normal; */
+  /* font-family: 'Kaeru Kaeru', sans-serif;
+  font-family: 'BianZhiDai brush'; */
+  /* font-family: 'PicNic'; */
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin: 0;
+  text-shadow: #5252ff 1px 1px;
+  z-index: 2;
+}
+.headerBGText{
+  font-family: 'BianZhiDai brush';
+  grid-column: 1/2;
+  grid-row: 1/2;
+  opacity: 0.1;
+  /* letter-spacing: 4rem; */
+  font-size: calc(var(--headline-1)*4);  
+  margin: 0;
+  stroke: #5252ff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--col03);
+  line-height: 1;
+  transition: font-size 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+.headerBGTextShrink {
+  font-size: calc(var(--headline-1)*2);
+}
 
 /* NAV */
 nav {
@@ -145,6 +185,7 @@ nav {
 
 main {
   padding: 1rem;
+  padding-top: 2rem;
   border: var(--border);
   border-image: 
     linear-gradient(
@@ -345,7 +386,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
   padding-right: 2rem;
 }
 
@@ -379,6 +419,9 @@ main {
 /* check for hover and change margin-left shift */
 /* very narrow */
 @media only screen and (max-width: 600px) {
+  main{
+    padding-top: 1rem;
+  }
   .navGap {
     width: 0.5rem;
   }
