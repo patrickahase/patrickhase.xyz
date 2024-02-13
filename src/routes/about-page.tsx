@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import SimpleBar from 'simplebar-react';
 
 export default function AboutPage(){
 
@@ -22,7 +21,6 @@ export default function AboutPage(){
   },[]);
 
   return(
-    <SimpleBar style={{ height: "100%" }} autoHide={false} scrollbarMinSize={32}>
       <div className="aboutContainer">
         <figure className="aboutIMGWrapper">
           <img  src="/patrick-hase.gif" alt="animated pixel art portrait of Patrick Hase" />
@@ -39,6 +37,5 @@ export default function AboutPage(){
           hmu via <a href="" ref={emailElementRef}>email</a>
         </p>
       </div>
-    </SimpleBar>
   )
 }

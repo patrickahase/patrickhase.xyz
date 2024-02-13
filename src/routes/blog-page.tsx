@@ -1,12 +1,11 @@
 import React from "react";
 import { blogPostList } from '../assets/blogList.tsx';
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
+import { useOutletContext } from "react-router-dom";
 
 export default function BlogPage(){
 
-  const scrollableNodeRef = React.createRef<HTMLDivElement>();
+  const scrollableNodeRef :React.RefObject<HTMLDivElement> = useOutletContext();
  
   const blogDetails: React.ReactElement[] = blogPostList.map(blogPost => 
     <AnimatedDetailsWrapper key={blogPost.id} detailsID={blogPost.id}>
@@ -33,10 +32,8 @@ export default function BlogPage(){
   );
 
   return(
-    <SimpleBar style={{ height: "100%" }} forceVisible="y" autoHide={false} scrollbarMinSize={32}>
-      <div className="projectsContainer">
-        {blogDetails}
-      </div>
-    </SimpleBar>
+    <div className="projectsContainer">
+      {blogDetails}
+    </div>
   )
 }

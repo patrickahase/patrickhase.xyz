@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { projectList } from '../assets/projectList.tsx';
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
+import { useOutletContext } from "react-router-dom";
 
-export default function ProjectsPage(){
-  
-  const scrollableNodeRef = React.createRef<HTMLDivElement>();
+export default function ProjectsPage(){ 
+
+  const scrollableNodeRef :React.RefObject<HTMLDivElement> = useOutletContext();
 
   const projectDetails: React.ReactElement[] = projectList.map(project => 
     <AnimatedDetailsWrapper key={project.id} detailsID={project.id}>
@@ -48,31 +47,9 @@ export default function ProjectsPage(){
     </AnimatedDetailsWrapper>
   );
 
-  function shrinkHeaderText(): void {
-    const headerTextWrapper = document.getElementsByClassName("headerBGText")[0];
-    const scrollableDiv = scrollableNodeRef.current;
-    const firstAnimatedDetails = document.getElementsByClassName("animatedDetailsSummary")[0];
-    if(headerTextWrapper && scrollableDiv && firstAnimatedDetails){
-      headerTextWrapper.classList.add("headerBGTextShrink");
-      scrollableDiv.removeEventListener("scroll", shrinkHeaderText);
-      firstAnimatedDetails.removeEventListener("click", shrinkHeaderText);
-    }
-  }
-
-  useEffect(() => {
-    const scrollableDiv = scrollableNodeRef.current;
-    const firstAnimatedDetails = document.getElementsByClassName("animatedDetailsSummary")[0];
-    if(scrollableDiv && firstAnimatedDetails){
-      scrollableDiv.addEventListener("scroll", shrinkHeaderText);
-      firstAnimatedDetails.addEventListener("click", shrinkHeaderText);
-    }
-  },[]);
-
   return(
-    <SimpleBar style={{ height: "100%" }} forceVisible="y" autoHide={false} scrollbarMinSize={32} scrollableNodeProps={{ ref: scrollableNodeRef }}>
-      <div className="projectsContainer">
-        {projectDetails}
-      </div>
-    </SimpleBar>
+    <div className="projectsContainer">
+      {projectDetails}
+    </div>
   )
 }
