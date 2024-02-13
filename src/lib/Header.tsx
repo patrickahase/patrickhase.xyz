@@ -95,7 +95,7 @@ export default function Header() {
                         A 22,22 0,1,1 45,0
                         L 50,10
                         z" />
-            </svg>
+          </svg>
         </div>
 
         <div className="navGap"></div>

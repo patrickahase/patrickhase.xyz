@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
+  Navigate
 } from "react-router-dom";
 import Root from './routes/root';
 import ErrorPage from './error-page';
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        index: true, // path is root "/"
+        element: <Navigate to="/about/" replace />,
+      },
       {
         path: "about/",
         element: <AboutPage />
