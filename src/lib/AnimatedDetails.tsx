@@ -77,8 +77,7 @@ export function AnimatedDetailsWrapper({children, detailsID, startOpen, scrollab
     const scrollableDiv = scrollableNodeRef.current;
     const headerTextWrapper = document.getElementsByClassName("headerBGText")[0];
     if(scrollableDiv && startOpen && detailsElementRef.current && headerTextWrapper instanceof HTMLElement){
-      scrollableDiv.scroll(0, detailsElementRef.current.getBoundingClientRect().top - scrollableDiv.getBoundingClientRect().top);
-      headerTextWrapper.style.backgroundColor = "red";
+      scrollableDiv.scroll(0, detailsElementRef.current.getBoundingClientRect().top - scrollableDiv.getBoundingClientRect().top);      
     }
     setupAnimatedAccordion();
     return () => {

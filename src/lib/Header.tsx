@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function Header() {
 
@@ -107,9 +108,16 @@ export default function Header() {
 }
 
 function HeaderLogo(){
+
+  const IDParams = useParams();
+
   return (
-    <div className="headerTextWrapper">      
-      <h1 className="headerBGText">ph</h1>
+    <div className="headerTextWrapper">  
+      {IDParams.projectID || IDParams.blogPostID
+        ? <h1 className="headerBGText headerBGTextShrink">ph</h1>
+        : <h1 className="headerBGText">ph</h1>
+      }    
+      
       <h1 className="headerText">&#123; patrick Hase &#125;</h1>
     </div>
     

@@ -1,17 +1,26 @@
 
-import React, { useState } from "react";
-import { blogPostList, blogPostType } from '../assets/blogList.tsx';
+import React from "react";
+import { blogPostList } from '../assets/blogList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
+import { RootContextType } from "./root.tsx";
 
 export default function BlogPage(){
 
-  const [currentBlogPostList, setCurrentBlogPostList] = useState<blogPostType[]>(blogPostList);
+  const blogIDParams = useParams();
+
+  const RootContext: RootContextType = useOutletContext();
+
+  const currentBlogPostList = blogPostList.map(
+                              blogPost => blogPost.id === blogIDParams.blogPostID ?
+                                          {...blogPost, startOpen: true}          
+                                          : blogPost
+  );
  
   const blogDetails: React.ReactElement[] = currentBlogPostList.map(blogPost => 
-    <AnimatedDetailsWrapper key={blogPost.id} detailsID={blogPost.id} isOpen={false}>
+    <AnimatedDetailsWrapper key={blogPost.id} detailsID={blogPost.id} startOpen={blogPost.startOpen} scrollableNodeRef={RootContext.scrollableNodeRef}>
 
-      <AnimatedDetailsSummary context={useOutletContext()}>
+      <AnimatedDetailsSummary rootContext={RootContext}>
 
       <div className="blogPostSummaryText">
 

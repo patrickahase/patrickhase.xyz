@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { projectList, projectType } from '../assets/projectList.tsx';
+import React from "react";
+import { projectList } from '../assets/projectList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
 import { useOutletContext, useParams } from "react-router-dom";
 import { RootContextType } from "./root.tsx";

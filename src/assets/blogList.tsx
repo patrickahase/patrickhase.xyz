@@ -8,7 +8,7 @@ export interface blogPostType {
 
 export const blogPostList: blogPostType[] = [
   {
-    id: "under-contruction",
+    id: "under-construction",
     startOpen: false,
     title: "Under Construction",
     date: new Date(2024, 2, 3),
