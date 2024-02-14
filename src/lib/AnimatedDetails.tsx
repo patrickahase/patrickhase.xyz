@@ -1,4 +1,6 @@
 import { useEffect, useRef, ReactNode } from "react";
+import { useOutletContext } from "react-router-dom";
+import { RootContextType } from "../routes/root.tsx";
 
 interface AnimatedDetailsWrapperProps {
   children: ReactNode;
@@ -86,17 +88,23 @@ export function AnimatedDetailsWrapper({children, detailsID}: AnimatedDetailsWra
 
 interface AnimatedDetailsSummaryProps {
   children: ReactNode;
-  scrollableDivRef: React.RefObject<HTMLDivElement>;
+  context: RootContextType;
 }
 
-export function AnimatedDetailsSummary({children, scrollableDivRef}: AnimatedDetailsSummaryProps) {
+export function AnimatedDetailsSummary({children, context}: AnimatedDetailsSummaryProps) {
+
+  const RootContext = useOutletContext<RootContextType>();
+
+  const clickListenerAbort = useRef(new AbortController());
+
+  const summaryElementRef = useRef<HTMLElement>(null);
 
   let detailsAnimationTime: number = 0;
 
   function animateScrollOnDetailsOpen(e: React.MouseEvent):void {
     /* if event on details element, that isn't open, and a scrollable div exists */
-    if(scrollableDivRef){
-      const scrollableDiv = scrollableDivRef.current;
+    if(RootContext.scrollableNodeRef){
+      const scrollableDiv = RootContext.scrollableNodeRef.current;
       const detailsElement = e.currentTarget.parentElement;
       if(detailsElement instanceof HTMLDetailsElement 
         && !detailsElement.open
@@ -171,6 +179,12 @@ export function AnimatedDetailsSummary({children, scrollableDivRef}: AnimatedDet
     }
   }
 
+  useEffect(() => {
+    if(RootContext.headerIsShrunk === true){      
+      clickListenerAbort.current.abort();
+    }
+  }, [RootContext.headerIsShrunk]);
+
   /* on init pull transition time */
   useEffect(() => {
     const detailsElement = document.getElementsByClassName("animatedDetails")[0];
@@ -179,10 +193,18 @@ export function AnimatedDetailsSummary({children, scrollableDivRef}: AnimatedDet
       /* need to remove s then convert to float than multiple by 1000 than make int */
       detailsAnimationTime = Math.floor(parseFloat(detailsStyle.transitionDuration.replace('s',''))*1000);
     }
-  })
+    if(!RootContext.headerIsShrunk && summaryElementRef.current){
+      summaryElementRef.current.addEventListener("click", () => {RootContext.shrinkHeaderText()}, { signal: clickListenerAbort.current.signal });
+    }
+    return () => {
+      if(!RootContext.headerIsShrunk){
+        clickListenerAbort.current.abort();
+      }
+    }
+  },[]);
 
   return (
-    <summary className="animatedDetailsSummary" onClick={animateScrollOnDetailsOpen}>
+    <summary className="animatedDetailsSummary" ref={summaryElementRef} onClick={animateScrollOnDetailsOpen}>
 
       <AnimatedDetailsDisclosure />
 

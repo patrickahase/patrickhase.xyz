@@ -5,13 +5,10 @@ import { useOutletContext } from "react-router-dom";
 
 export default function ProjectsPage(){ 
 
-  const scrollableNodeRef :React.RefObject<HTMLDivElement> = useOutletContext();
-
   const projectDetails: React.ReactElement[] = projectList.map(project => 
     <AnimatedDetailsWrapper key={project.id} detailsID={project.id}>
 
-      <AnimatedDetailsSummary scrollableDivRef={scrollableNodeRef}>
-
+      <AnimatedDetailsSummary context={useOutletContext()}>
       <div className="projectSummaryText" id={project.id}>
 
         <h3 className="projectSummaryTitle">{project.title}</h3>

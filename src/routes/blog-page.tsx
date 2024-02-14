@@ -1,16 +1,15 @@
+
 import React from "react";
 import { blogPostList } from '../assets/blogList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
 import { useOutletContext } from "react-router-dom";
 
 export default function BlogPage(){
-
-  const scrollableNodeRef :React.RefObject<HTMLDivElement> = useOutletContext();
  
   const blogDetails: React.ReactElement[] = blogPostList.map(blogPost => 
     <AnimatedDetailsWrapper key={blogPost.id} detailsID={blogPost.id}>
 
-      <AnimatedDetailsSummary scrollableDivRef={scrollableNodeRef}>
+      <AnimatedDetailsSummary context={useOutletContext()}>
 
       <div className="blogPostSummaryText">
 
