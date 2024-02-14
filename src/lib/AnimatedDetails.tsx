@@ -97,6 +97,8 @@ export function AnimatedDetailsSummary({children, context}: AnimatedDetailsSumma
 
   const clickListenerAbort = useRef(new AbortController());
 
+  const toggleListenerAbort = useRef(new AbortController());
+
   const summaryElementRef = useRef<HTMLElement>(null);
 
   let detailsAnimationTime: number = 0;
@@ -167,7 +169,7 @@ export function AnimatedDetailsSummary({children, context}: AnimatedDetailsSumma
         }
         /* check if prefers-reduced-motion, if not then check direction of scroll */
         if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-          detailsElement.addEventListener("toggle", scrollNoMotion);                
+          detailsElement.addEventListener("toggle", scrollNoMotion, { signal: toggleListenerAbort.current.signal });                
         } else {
           if(scrollTarget > currentScroll){
             window.requestAnimationFrame(scrollDownStep);
@@ -199,6 +201,7 @@ export function AnimatedDetailsSummary({children, context}: AnimatedDetailsSumma
     return () => {
       if(!RootContext.headerIsShrunk){
         clickListenerAbort.current.abort();
+        toggleListenerAbort.current.abort();
       }
     }
   },[]);
