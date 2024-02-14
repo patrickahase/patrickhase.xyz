@@ -1,13 +1,15 @@
-export interface blogPost {
+export interface blogPostType {
   id: string;
+  startOpen: boolean;
   title: string;
   date: Date;
   body: JSX.Element;
 }
 
-export const blogPostList: blogPost[] = [
+export const blogPostList: blogPostType[] = [
   {
     id: "under-contruction",
+    startOpen: false,
     title: "Under Construction",
     date: new Date(2024, 2, 3),
     body: 

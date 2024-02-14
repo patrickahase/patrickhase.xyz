@@ -1,13 +1,15 @@
 
-import React from "react";
-import { blogPostList } from '../assets/blogList.tsx';
+import React, { useState } from "react";
+import { blogPostList, blogPostType } from '../assets/blogList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
 import { useOutletContext } from "react-router-dom";
 
 export default function BlogPage(){
+
+  const [currentBlogPostList, setCurrentBlogPostList] = useState<blogPostType[]>(blogPostList);
  
-  const blogDetails: React.ReactElement[] = blogPostList.map(blogPost => 
-    <AnimatedDetailsWrapper key={blogPost.id} detailsID={blogPost.id}>
+  const blogDetails: React.ReactElement[] = currentBlogPostList.map(blogPost => 
+    <AnimatedDetailsWrapper key={blogPost.id} detailsID={blogPost.id} isOpen={false}>
 
       <AnimatedDetailsSummary context={useOutletContext()}>
 

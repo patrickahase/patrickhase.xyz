@@ -1,5 +1,6 @@
-export interface project {
+export interface projectType {
   id: string;
+  startOpen: boolean;
   title: string;
   publisher: string;
   year: string;
@@ -10,9 +11,10 @@ export interface project {
   githubURL?: string;
 }
 
-export const projectList: project[] = [
+export const projectList: projectType[] = [
   {
     id: "room2-at-BLEED",
+    startOpen: false,
     title: "room2@BLEED",
     publisher: "Arts House",
     year: "2022",
@@ -69,6 +71,7 @@ export const projectList: project[] = [
   
   {
     id: "being-a-body",
+    startOpen: false,
     title: "being, a body",
     publisher: "LIMINAL",
     year: "2022",
@@ -89,6 +92,7 @@ export const projectList: project[] = [
   
   {
     id: "time-absorbs-feelings",
+    startOpen: false,
     title: "time absorbs the feelings it produces",
     publisher: "Arts House",
     year: "2021",
@@ -110,6 +114,7 @@ export const projectList: project[] = [
 
   {
     id: "the-longest-hum",
+    startOpen: false,
     title: "thelongesthum.world",
     publisher: "Cementa",
     year: "2021",
@@ -132,6 +137,7 @@ export const projectList: project[] = [
 
   {
     id: "sunkland-xyz",
+    startOpen: false,
     title: "SUNKLAND.XYZ",
     publisher: "Disclaimer Journal",
     year: "2022",
@@ -152,6 +158,7 @@ export const projectList: project[] = [
 
   {
     id: "room2-fm",
+    startOpen: false,
     title: "room2.fm",
     publisher: "Various",
     year: "2021 => 22",
@@ -223,6 +230,7 @@ export const projectList: project[] = [
 
   {
     id: "object-animacy",
+    startOpen: false,
     title: "Object Animacy",
     publisher: "Avantwhatever",
     year: "2020",
@@ -242,6 +250,7 @@ export const projectList: project[] = [
 
   {
     id: "music-videos",
+    startOpen: false,
     title: "Music Videos",
     publisher: "Various",
     year: "2018 => 20",
@@ -265,6 +274,7 @@ export const projectList: project[] = [
 
   {
     id: "infinite-fluke",
+    startOpen: false,
     title: "Infinite Fluke",
     publisher: "Arts House",
     year: "2022",

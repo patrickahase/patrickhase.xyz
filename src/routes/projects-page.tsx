@@ -1,29 +1,41 @@
-import React from "react";
-import { projectList } from '../assets/projectList.tsx';
+import React, { useEffect, useState } from "react";
+import { projectList, projectType } from '../assets/projectList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
+import { RootContextType } from "./root.tsx";
 
-export default function ProjectsPage(){ 
+export default function ProjectsPage(){
 
-  const projectDetails: React.ReactElement[] = projectList.map(project => 
-    <AnimatedDetailsWrapper key={project.id} detailsID={project.id}>
+  const projectIDParams = useParams();
 
-      <AnimatedDetailsSummary context={useOutletContext()}>
-      <div className="projectSummaryText" id={project.id}>
+  const RootContext: RootContextType = useOutletContext();
 
-        <h3 className="projectSummaryTitle">{project.title}</h3>
+  const currentProjectList = projectList.map(
+                             project => project.id === projectIDParams.projectID ?
+                                        {...project, startOpen: true}          
+                                        : project
+  );
 
-        <div className="projectSummaryInfo">
+  const projectDetails: React.ReactElement[] = currentProjectList.map(project => 
+    <AnimatedDetailsWrapper key={project.id} detailsID={project.id} startOpen={project.startOpen} scrollableNodeRef={RootContext.scrollableNodeRef}>
 
-          <span className="projectSummaryInfoRole">{project.role}</span>
-          <div>
-            <span>{project.publisher}&nbsp;</span>
-            <span>{project.year}</span>
+      <AnimatedDetailsSummary rootContext={RootContext}>
+
+        <div className="projectSummaryText" id={project.id}>
+
+          <h3 className="projectSummaryTitle">{project.title}</h3>
+
+          <div className="projectSummaryInfo">
+
+            <span className="projectSummaryInfoRole">{project.role}</span>
+            <div>
+              <span>{project.publisher}&nbsp;</span>
+              <span>{project.year}</span>
+            </div>
+            
           </div>
-          
-        </div>
 
-      </div>
+        </div>
 
       </AnimatedDetailsSummary>
 

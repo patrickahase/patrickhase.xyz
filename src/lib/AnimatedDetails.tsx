@@ -1,13 +1,14 @@
 import { useEffect, useRef, ReactNode } from "react";
-import { useOutletContext } from "react-router-dom";
 import { RootContextType } from "../routes/root.tsx";
 
 interface AnimatedDetailsWrapperProps {
   children: ReactNode;
   detailsID: string;
+  startOpen: boolean;
+  scrollableNodeRef: React.RefObject<HTMLDivElement>;
 }
 
-export function AnimatedDetailsWrapper({children, detailsID}: AnimatedDetailsWrapperProps) {
+export function AnimatedDetailsWrapper({children, detailsID, startOpen, scrollableNodeRef}: AnimatedDetailsWrapperProps) {
   
   /* reference to details element */
   const detailsElementRef = useRef<HTMLDetailsElement>(null);
@@ -69,8 +70,16 @@ export function AnimatedDetailsWrapper({children, detailsID}: AnimatedDetailsWra
     }
   }
 
+
+
   /* init */
   useEffect(() => {
+    const scrollableDiv = scrollableNodeRef.current;
+    const headerTextWrapper = document.getElementsByClassName("headerBGText")[0];
+    if(scrollableDiv && startOpen && detailsElementRef.current && headerTextWrapper instanceof HTMLElement){
+      scrollableDiv.scroll(0, detailsElementRef.current.getBoundingClientRect().top - scrollableDiv.getBoundingClientRect().top);
+      headerTextWrapper.style.backgroundColor = "red";
+    }
     setupAnimatedAccordion();
     return () => {
       destroyAnimatedAccordion();
@@ -78,7 +87,7 @@ export function AnimatedDetailsWrapper({children, detailsID}: AnimatedDetailsWra
   }, []);
 
   return (
-    <details className="animatedDetails" ref={detailsElementRef} id={detailsID}>
+    <details className="animatedDetails" ref={detailsElementRef} id={detailsID} open={startOpen}>
 
     {children}
       
@@ -88,12 +97,12 @@ export function AnimatedDetailsWrapper({children, detailsID}: AnimatedDetailsWra
 
 interface AnimatedDetailsSummaryProps {
   children: ReactNode;
-  context: RootContextType;
+  rootContext: RootContextType;
 }
 
-export function AnimatedDetailsSummary({children, context}: AnimatedDetailsSummaryProps) {
+export function AnimatedDetailsSummary({children, rootContext}: AnimatedDetailsSummaryProps) {
 
-  const RootContext = useOutletContext<RootContextType>();
+  const RootContext = rootContext;
 
   const clickListenerAbort = useRef(new AbortController());
 
