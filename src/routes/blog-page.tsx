@@ -2,19 +2,21 @@
 import React from "react";
 import { blogPostList } from '../assets/blogList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
-import { useOutletContext, useParams } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import { RootContextType } from "./root.tsx";
 
-export default function BlogPage(){
+interface BlogPageProps {
+  openProjectID?: string;
+}
 
-  const blogIDParams = useParams();
+export default function BlogPage({openProjectID}: BlogPageProps){
 
   const RootContext: RootContextType = useOutletContext();
 
-  const currentBlogPostList = blogPostList.map(
-                              blogPost => blogPost.id === blogIDParams.blogPostID ?
-                                          {...blogPost, startOpen: true}          
-                                          : blogPost
+  const currentBlogPostList = 
+        blogPostList.map(blogPost => blogPost.id === openProjectID 
+        ? {...blogPost, startOpen: true}          
+        : blogPost
   );
  
   const blogDetails: React.ReactElement[] = currentBlogPostList.map(blogPost => 

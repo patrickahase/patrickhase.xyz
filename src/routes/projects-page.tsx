@@ -1,19 +1,21 @@
 import React from "react";
-import { projectList } from '../assets/projectList.tsx';
+import { projectList, projectType } from '../assets/projectList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
-import { useOutletContext, useParams } from "react-router-dom";
+import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import { RootContextType } from "./root.tsx";
 
-export default function ProjectsPage(){
+interface ProjectsPageProps {
+  openProjectID?: string;
+}
 
-  const projectIDParams = useParams();
+export default function ProjectsPage({openProjectID}: ProjectsPageProps){
 
   const RootContext: RootContextType = useOutletContext();
 
-  const currentProjectList = projectList.map(
-                             project => project.id === projectIDParams.projectID ?
-                                        {...project, startOpen: true}          
-                                        : project
+  const currentProjectList = 
+        projectList.map(project => project.id === openProjectID 
+        ? {...project, startOpen: true}
+        : project
   );
 
   const projectDetails: React.ReactElement[] = currentProjectList.map(project => 
