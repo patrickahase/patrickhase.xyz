@@ -1,7 +1,7 @@
 import React from "react";
-import { projectList, projectType } from '../assets/projectList.tsx';
+import { projectList } from '../assets/projectList.tsx';
 import { AnimatedDetailsSummary, AnimatedDetailsWrapper } from '../lib/AnimatedDetails.tsx';
-import { useOutletContext, useParams, useNavigate } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import { RootContextType } from "./root.tsx";
 
 interface ProjectsPageProps {

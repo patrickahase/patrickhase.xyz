@@ -1,7 +1,11 @@
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
-export default function Header() {
+interface HeaderProps {
+  headerIsShrunk: boolean;
+}
+
+export default function Header({headerIsShrunk}: HeaderProps) {
 
   // find location on load
   let loc = useLocation();
@@ -9,7 +13,7 @@ export default function Header() {
   return (
     <header>
 
-      <HeaderLogo />
+      <HeaderLogo headerIsShrunk={headerIsShrunk} />
 
       <nav>
 
@@ -107,15 +111,26 @@ export default function Header() {
   )
 }
 
-function HeaderLogo(){
+interface HeaderLogoProps {
+  headerIsShrunk: boolean;
+}
 
-  const IDParams = useParams();
+function HeaderLogo({headerIsShrunk}: HeaderLogoProps){
+
+  const headerElementRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const headerElement = headerElementRef.current;
+    if(headerIsShrunk === true && headerElement){
+      headerElement.classList.add("headerBGTextShrink");
+    }
+  }, [headerIsShrunk]);
 
   return (
     <div className="headerTextWrapper">  
-      {IDParams.projectID || IDParams.blogPostID
+      {headerIsShrunk
         ? <h1 className="headerBGText headerBGTextShrink">ph</h1>
-        : <h1 className="headerBGText">ph</h1>
+        : <h1 className="headerBGText" ref={headerElementRef}>ph</h1>
       }    
       
       <h1 className="headerText">&#123; patrick Hase &#125;</h1>

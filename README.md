@@ -4,8 +4,6 @@ To Do
 - credit font in footer
 - scroll on margins
 
-- header shrink handle different pages : check for classname
-
-- change map to for of and handle redirects : if not id match send to relevant route or add id at the end
+- header shrink handle different pages : now on route switch, try below first
 
 - change link in nav to navlink

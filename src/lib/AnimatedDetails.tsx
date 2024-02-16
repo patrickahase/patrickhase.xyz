@@ -204,7 +204,7 @@ export function AnimatedDetailsSummary({children, rootContext}: AnimatedDetailsS
       detailsAnimationTime = Math.floor(parseFloat(detailsStyle.transitionDuration.replace('s',''))*1000);
     }
     if(!RootContext.headerIsShrunk && summaryElementRef.current){
-      summaryElementRef.current.addEventListener("click", () => {RootContext.shrinkHeaderText()}, { signal: clickListenerAbort.current.signal });
+      summaryElementRef.current.addEventListener("click", () => {RootContext.setHeaderIsShrunk(true)}, { signal: clickListenerAbort.current.signal });
     }
     return () => {
       if(!RootContext.headerIsShrunk){
