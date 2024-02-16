@@ -17,7 +17,7 @@ import { blogPostList, blogPostType } from './assets/blogList.tsx';
 
 import './main.css';
 
-type childrenRouteType = {
+type childRouteType = {
   index: boolean;
   path?: never;
   element: ReactElement;
@@ -29,7 +29,7 @@ type childrenRouteType = {
   handle: RouteObject["handle"];
 }
 
-let indexAboutRoutes: childrenRouteType[] = [
+let indexAboutRoutes: childRouteType[] = [
   {
     index: true, // path is root "/"
     element: <Navigate to="/about/" replace />,
@@ -42,7 +42,7 @@ let indexAboutRoutes: childrenRouteType[] = [
   }
 ];
 
-const projectIDRoutes: childrenRouteType[] = 
+const projectIDRoutes: childRouteType[] = 
       projectList.map((project: projectType) => 
         ({
           path: `/projects/${project.id}`,
@@ -51,7 +51,7 @@ const projectIDRoutes: childrenRouteType[] =
         })  
 );
 
-const projectBaseRoutes: childrenRouteType[] = [
+const projectBaseRoutes: childRouteType[] = [
   {
     path: "projects/:projectID?",
     element: <Navigate to="/projects/" replace />,
@@ -64,7 +64,7 @@ const projectBaseRoutes: childrenRouteType[] = [
   },
 ];
 
-const blogIDRoutes: childrenRouteType[] = 
+const blogIDRoutes: childRouteType[] = 
       blogPostList.map((blogPost: blogPostType) => 
         ({
           path: `/blog/${blogPost.id}`,
@@ -73,7 +73,7 @@ const blogIDRoutes: childrenRouteType[] =
         })  
 );
 
-const blogBaseRoutes: childrenRouteType[] = [
+const blogBaseRoutes: childRouteType[] = [
   {
     path: "blog/:blogPostID?",
     element: <Navigate to="/blog/" replace />,
@@ -86,7 +86,7 @@ const blogBaseRoutes: childrenRouteType[] = [
   },
 ];
 
-const childrenRoutes: childrenRouteType[] = 
+const childrenRoutes: childRouteType[] = 
       indexAboutRoutes.concat(
       projectIDRoutes,
       projectBaseRoutes,

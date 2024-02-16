@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 interface HeaderProps {
   headerIsShrunk: boolean;
@@ -51,25 +51,15 @@ export default function Header({headerIsShrunk}: HeaderProps) {
 
         <div className="navGap"></div>
 
-        {/* check current pathname - update class if on that link's path */}
-        {loc.pathname.includes("projects") 
-          ?  <Link to={`projects/`} className="navTab activeNavTab" id="projects"> Projects </Link>
-          :  <Link to={`projects/`} className="navTab" id="projects"> Projects </Link>
-        }
+        <NavLink to="projects/" className="navTab">Projects</NavLink>
 
         <div className="navGap"></div>
 
-        {loc.pathname.includes("about") 
-          ?  <Link to={`about/`} className="navTab activeNavTab" id="about"> About </Link>
-          :  <Link to={`about/`} className="navTab" id="about"> About </Link>
-        }
+        <NavLink to="about/" className="navTab">About</NavLink>
 
         <div className="navGap"></div>
         
-        {loc.pathname.includes("blog") 
-          ?  <Link to={`blog/`} className="navTab activeNavTab" id="blog"> Blog </Link>
-          :  <Link to={`blog/`} className="navTab" id="blog"> Blog </Link>
-        }
+        <NavLink to="blog/" className="navTab">Blog</NavLink>
 
         <div className="navGap"></div>
 

@@ -166,7 +166,7 @@ nav {
 .navTab:link, .navTab:visited {
   color: var(--col01);
 }
-.activeNavTab {
+.navTab.active {
   align-self: stretch;
   border-bottom: 0;
   margin-top: 0rem;

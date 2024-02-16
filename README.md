@@ -4,6 +4,5 @@ To Do
 - credit font in footer
 - scroll on margins
 
-- header shrink handle different pages : now on route switch, try below first
+- animateddetails remeasure on resize
 
-- change link in nav to navlink
