@@ -1,14 +1,11 @@
 import { useEffect, useRef } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface HeaderProps {
   headerIsShrunk: boolean;
 }
 
 export default function Header({headerIsShrunk}: HeaderProps) {
-
-  // find location on load
-  let loc = useLocation();
 
   return (
     <header>
@@ -121,8 +118,7 @@ function HeaderLogo({headerIsShrunk}: HeaderLogoProps){
       {headerIsShrunk
         ? <h1 className="headerBGText headerBGTextShrink">ph</h1>
         : <h1 className="headerBGText" ref={headerElementRef}>ph</h1>
-      }    
-      
+      }         
       <h1 className="headerText">&#123; patrick Hase &#125;</h1>
     </div>
     

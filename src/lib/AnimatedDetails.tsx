@@ -19,19 +19,19 @@ export function AnimatedDetailsWrapper({children, detailsID, startOpen, scrollab
       details.open = isOpen;
       let rect: DOMRect = details.getBoundingClientRect();
       details.dataset.width = rect.width.toString();
-      details.style.setProperty(isOpen ? `--expanded` : `--collapsed`, `${rect.height}px`);
+      details.style.setProperty(isOpen ? `--expanded` : `--collapsed`, `${rect.height}px`);    
     }
     const detailsElement = detailsElementRef.current;
     if(detailsElement){
       RO = new ResizeObserver(entries => {
-           return entries.forEach(entry => {
+           entries.forEach(entry => {
             if(detailsElement.dataset.width){
               const width: number = parseInt(detailsElement.dataset.width, 10);
               if (width !== parseInt(entry.borderBoxSize[0].inlineSize.toString(), 10)){
                 let nowOpen = detailsElement.open;
                 detailsElement.removeAttribute('style');
                 setHeight(detailsElement);
-                setHeight(detailsElement, true);
+                setHeight(detailsElement, true);                
                 detailsElement.open = nowOpen;
               }
             } else {
@@ -40,7 +40,8 @@ export function AnimatedDetailsWrapper({children, detailsID, startOpen, scrollab
               setHeight(detailsElement);
               setHeight(detailsElement, true);
               detailsElement.open = nowOpen;
-          }          
+          }
+          
         });
       });
       RO.observe(detailsElement);
@@ -67,7 +68,7 @@ export function AnimatedDetailsWrapper({children, detailsID, startOpen, scrollab
   return (
     <details className="animatedDetails" ref={detailsElementRef} id={detailsID} open={startOpen}>
 
-    {children}
+      {children}
       
     </details>
   )
