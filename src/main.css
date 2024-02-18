@@ -425,12 +425,9 @@ main {
 .aboutIMGWrapper > figcaption {
   text-align: center;
 }
-ul{
+.aboutList{
   padding: 0;
   list-style-position: inside;
-}
-li{
-  
 }
 
 

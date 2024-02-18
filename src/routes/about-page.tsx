@@ -54,7 +54,7 @@ export default function AboutPage(){
         </p>
         <p>
           This website's design includes the fonts: 
-          <ul>
+          <ul className='aboutList'>
             <li>Work sans by Wei Huang.</li>
             <li>BianZhiDai by Xiaoyuan Gao, notyourtypefoundry. Distributed by velvetyne.fr.</li>
           </ul>          
