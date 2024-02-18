@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 
 export default function AboutPage(){
 
-  const dateObject = new Date();
+  /* const dateObject = new Date(); */
 
   /* const dateString = 
         dateObject.getDate() + "/" +
         (dateObject.getMonth() + 1) + "/" +
         dateObject.getFullYear(); */
   //const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {timeZone: "Australia/Melbourne"});
-  const dateString = dateObject.toLocaleString("en-GB", {/* dateStyle: "short", */ timeZone: "Australia/Melbourne"});
+  const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {/* dateStyle: "short", */ timeZone: "Australia/Melbourne"});
 
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
