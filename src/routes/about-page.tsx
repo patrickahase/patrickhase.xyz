@@ -4,10 +4,11 @@ export default function AboutPage(){
 
   const dateObject = new Date();
 
-  const dateString = 
+  /* const dateString = 
         dateObject.getDate() + "/" +
         (dateObject.getMonth() + 1) + "/" +
-        dateObject.getFullYear();
+        dateObject.getFullYear(); */
+  const dateString = dateObject.toString();
 
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
@@ -40,7 +41,7 @@ export default function AboutPage(){
         </p>
         <p>
           I live and work on unceded <a href='https://www.wurundjeri.com.au/' target='_blank'>Wurundjeri</a> Country. Always 
-          was always will be Aboriginal land.
+          Was, Always Will Be Aboriginal Land.
         </p>
         <p>
           My practice often leads to the construction of playful and collaborative browser-based interfaces grounded through my 
