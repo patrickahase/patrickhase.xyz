@@ -2,13 +2,13 @@ import { useEffect, useRef } from 'react';
 
 export default function AboutPage(){
 
-  const dateObject = new Date();
+  /* const dateObject = new Date(); */
 
   /* const dateString = 
         dateObject.getDate() + "/" +
         (dateObject.getMonth() + 1) + "/" +
         dateObject.getFullYear(); */
-  const dateString = dateObject.toString();
+  const dateString = BUILD_TIMESTAMP.toString();
 
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
