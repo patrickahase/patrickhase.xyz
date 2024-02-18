@@ -9,7 +9,7 @@ export default function AboutPage(){
         (dateObject.getMonth() + 1) + "/" +
         dateObject.getFullYear(); */
   //const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {timeZone: "Australia/Melbourne"});
-  const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {/* dateStyle: "short", */ timeZone: "Australia/Melbourne"});
+  const dateString = BUILD_TIMESTAMP.toString();
 
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
