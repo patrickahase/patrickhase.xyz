@@ -405,18 +405,19 @@ main {
 
 /* ABOUT PAGE */
 .aboutContainer {
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
   padding-right: 2rem;
+  padding-left: 1rem;
+  font-size: var(--headline-4);
 }
 .aboutIMGWrapper {
-  max-width: 15rem;
+  max-width: 20rem;
   border: var(--border);
   padding: 1rem;
-  padding-bottom: 0;
-  float: left;
+  padding-top: 0;
+  margin: 0 var(--headline-4);
+  float: right;
 }
 .aboutIMGWrapper > img {
   width: 100%;
@@ -424,7 +425,13 @@ main {
 .aboutIMGWrapper > figcaption {
   text-align: center;
 }
-
+ul{
+  padding: 0;
+  list-style-position: inside;
+}
+li{
+  
+}
 
 
 /* BLOG PAGE */
@@ -452,6 +459,13 @@ main {
   .projectSummaryInfo{
     border-top: 10px solid var(--col01);
     border-image: linear-gradient(90deg, var(--col01), var(--col02)) 30;
+  }
+  .aboutContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutIMGWrapper{
+    align-self: center;
   }
 }
 

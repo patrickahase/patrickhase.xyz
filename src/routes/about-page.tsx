@@ -2,6 +2,13 @@ import { useEffect, useRef } from 'react';
 
 export default function AboutPage(){
 
+  const dateObject = new Date();
+
+  const dateString = 
+        dateObject.getDate() + "/" +
+        (dateObject.getMonth() + 1) + "/" +
+        dateObject.getFullYear();
+
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
   /* update email to stop scraping */
@@ -29,13 +36,30 @@ export default function AboutPage(){
           </figcaption>
         </figure>
         <p>
-          I'm a media artist and researcher focused on digital interaction design in full-stack audio/visual web development. My practice 
-          often leads to the construction of playful and collaborative browser-based interfaces grounded through my previous experiences 
-          working in music production & performance, 3D animation and VR. I'm currently focused on my creative practice PhD at RMIT.
+          I'm a media artist and researcher focused on digital interaction design in full-stack audio/visual web development.
+        </p>
+        <p>
+          I live and work on unceded <a href='https://www.wurundjeri.com.au/' target='_blank'>Wurundjeri</a> Country. Always 
+          was always will be Aboriginal land.
+        </p>
+        <p>
+          My practice often leads to the construction of playful and collaborative browser-based interfaces grounded through my 
+          previous experiences working in music production & performance, 3D animation and VR. 
+        </p>
+        <p>
+          I'm currently focused on my creative practice PhD at RMIT.
         </p>
         <p>
           hmu via <a href="" ref={emailElementRef}>email</a>
         </p>
+        <p>
+          This website's design includes the fonts: 
+          <ul>
+            <li>Work sans by Wei Huang.</li>
+            <li>BianZhiDai by Xiaoyuan Gao, notyourtypefoundry. Distributed by velvetyne.fr.</li>
+          </ul>          
+        </p>
+        <p>Last updated {dateObject.toString()}</p>
       </div>
   )
 }
