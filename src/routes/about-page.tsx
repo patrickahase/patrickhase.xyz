@@ -9,7 +9,7 @@ export default function AboutPage(){
         (dateObject.getMonth() + 1) + "/" +
         dateObject.getFullYear(); */
   //const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {timeZone: "Australia/Melbourne"});
-  //const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {/* dateStyle: "short", */ timeZone: "Australia/Melbourne"});
+  const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {/* dateStyle: "short", */ timeZone: "Australia/Melbourne"});
 
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
@@ -61,7 +61,7 @@ export default function AboutPage(){
             <li>BianZhiDai by Xiaoyuan Gao, notyourtypefoundry. Distributed by velvetyne.fr.</li>
           </ul>          
         </p>
-        <p>Last updated {BUILD_TIMESTAMP}</p>
+        <p>Last updated {dateString}</p>
       </div>
   )
 }

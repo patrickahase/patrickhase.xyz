@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   define: {
-    BUILD_TIMESTAMP: new Date().toLocaleString("en-GB", {/* dateStyle: "short", */ timeZone: "Australia/Melbourne"})
+    BUILD_TIMESTAMP: new Date()
   }
 })
