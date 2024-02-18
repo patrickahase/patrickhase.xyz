@@ -8,8 +8,10 @@ export default function AboutPage(){
         dateObject.getDate() + "/" +
         (dateObject.getMonth() + 1) + "/" +
         dateObject.getFullYear(); */
-  //const dateString = BUILD_TIMESTAMP.toLocaleString("en-GB", {timeZone: "Australia/Melbourne"});
-  const dateString = BUILD_TIMESTAMP.toString();
+  
+  //const dateString = BUILD_TIMESTAMP.toString();
+  const localDate = new Date(BUILD_TIMESTAMP);
+  const dateString = localDate.toLocaleString("en-GB", {/* dateStyle: "short", */ timeZone: "Australia/Melbourne"});
 
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
