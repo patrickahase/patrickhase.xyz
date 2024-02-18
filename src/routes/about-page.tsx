@@ -4,10 +4,10 @@ export default function AboutPage(){
 
   const dateObject = new Date();
 
-  /* const dateString = 
+  const dateString = 
         dateObject.getDate() + "/" +
         (dateObject.getMonth() + 1) + "/" +
-        dateObject.getFullYear(); */
+        dateObject.getFullYear();
 
   /* reference to email link element */
   const emailElementRef = useRef<HTMLAnchorElement>(null);
@@ -59,7 +59,7 @@ export default function AboutPage(){
             <li>BianZhiDai by Xiaoyuan Gao, notyourtypefoundry. Distributed by velvetyne.fr.</li>
           </ul>          
         </p>
-        <p>Last updated {dateObject.toString()}</p>
+        <p>Last updated {dateString}</p>
       </div>
   )
 }
