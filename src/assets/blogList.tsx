@@ -8,6 +8,16 @@ export interface blogPostType {
 
 export const blogPostList: blogPostType[] = [
   {
+    id: "last-updated",
+    startOpen: false,
+    title: "Last Updated: ",
+    date: new Date(2024, 2, 21),
+    body: 
+      <>
+        
+      </>
+  },
+  {
     id: "under-construction",
     startOpen: false,
     title: "Under Construction",
@@ -21,5 +31,5 @@ export const blogPostList: blogPostType[] = [
           in the future along with details on my dev-ops success I'll write a little about these failures.
         </p>
       </>
-  }
+  },
 ];

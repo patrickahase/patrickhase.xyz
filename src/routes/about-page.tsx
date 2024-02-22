@@ -33,28 +33,23 @@ export default function AboutPage(){
         </figure>
         <p>
           I'm a media artist and researcher focused on digital interaction design in full-stack audio/visual web development.
+          My practice often leads to the construction of playful and collaborative browser-based interfaces grounded through my 
+          previous experiences working in music production & performance, 3D animation and VR.
         </p>
         <p>
           I live and work on unceded <a href='https://www.wurundjeri.com.au/' target='_blank'>Wurundjeri</a> Country. Always 
           Was, Always Will Be Aboriginal Land.
         </p>
         <p>
-          My practice often leads to the construction of playful and collaborative browser-based interfaces grounded through my 
-          previous experiences working in music production & performance, 3D animation and VR. 
-        </p>
-        <p>
-          I'm currently focused on my creative practice PhD at RMIT.
-        </p>
-        <p>
           hmu via <a href="" ref={emailElementRef}>email</a>
         </p>
         <p>
-          This website's design includes the fonts: 
-          <ul className='aboutList'>
-            <li>Work sans by Wei Huang.</li>
-            <li>BianZhiDai by Xiaoyuan Gao, notyourtypefoundry. Distributed by velvetyne.fr.</li>
-          </ul>          
+          This website's design includes the fonts:         
         </p>
+        <ul className='aboutList'>
+          <li>Work sans by Wei Huang.</li>
+          <li>BianZhiDai by Xiaoyuan Gao, notyourtypefoundry. Distributed by velvetyne.fr.</li>
+        </ul> 
         <p>Last updated {dateString}</p>
       </div>
   )

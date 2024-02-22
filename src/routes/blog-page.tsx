@@ -44,7 +44,7 @@ export default function BlogPage({openProjectID}: BlogPageProps){
   );
 
   return(
-    <div className="projectsContainer">
+    <div className="blogContainer">
       {blogDetails}
     </div>
   )

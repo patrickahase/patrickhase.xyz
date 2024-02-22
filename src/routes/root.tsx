@@ -49,6 +49,7 @@ export default function Root() {
       <Header headerIsShrunk={headerIsShrunk} />
 
       <main id="main-content">
+        <div className="scrollGradientFade"></div>
         <SimpleBar style={{ height: "100%" }} forceVisible="y" autoHide={false} scrollbarMinSize={32} scrollableNodeProps={{ ref: scrollableNodeRef }}>
           <Outlet context={{scrollableNodeRef, headerIsShrunk, setHeaderIsShrunk} satisfies RootContextType} />
         </SimpleBar>

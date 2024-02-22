@@ -14,31 +14,31 @@ export default function Header({headerIsShrunk}: HeaderProps) {
 
       <nav>
 
-        <div className="navGap"></div>
+        {/* <div className="navGap"></div> */}
 
         <div className="navOrnamentBox">
           <NavOrnament />
         </div>
 
-        <div className="navGap"></div>
+        {/* <div className="navGap"></div> */}
 
         <NavLink to="projects/" className="navTab">Projects</NavLink>
 
-        <div className="navGap"></div>
+        {/* <div className="navGap"></div> */}
 
         <NavLink to="about/" className="navTab">About</NavLink>
 
-        <div className="navGap"></div>
+        {/* <div className="navGap"></div> */}
         
         <NavLink to="blog/" className="navTab">Blog</NavLink>
 
-        <div className="navGap"></div>
+        {/* <div className="navGap"></div> */}
 
         <div className="navOrnamentBox">
           <NavOrnament />
         </div>
 
-        <div className="navGap"></div>
+        {/* <div className="navGap"></div> */}
         
       </nav>
 

@@ -89,7 +89,8 @@ export function AnimatedDetailsSummary({children, rootContext}: AnimatedDetailsS
 
   const summaryElementRef = useRef<HTMLElement>(null);
 
-  let detailsAnimationTime: number = 0;
+  /* still can't automate for some reason */
+  let detailsAnimationTime: number = 300;
 
   function animateScrollOnDetailsOpen(e: React.MouseEvent):void {
     const scrollableDiv = RootContext.scrollableNodeRef.current;
@@ -99,9 +100,12 @@ export function AnimatedDetailsSummary({children, rootContext}: AnimatedDetailsS
       && scrollableDiv){        
       let start: number | undefined, previousTimeStamp: number | undefined, done: boolean = false;
       const currentScroll: number = scrollableDiv.scrollTop;
-      const scrollTarget: number = currentScroll + (detailsElement.getBoundingClientRect().top - scrollableDiv.getBoundingClientRect().top);
+      const scrollTarget: number = currentScroll + 
+                                   (detailsElement.getBoundingClientRect().top - scrollableDiv.getBoundingClientRect().top) - 
+                                   parseInt(getComputedStyle(detailsElement).gap);
       /* find difference then divide by time */
       const scrollIncrement: number = Math.abs(currentScroll - scrollTarget) / detailsAnimationTime;
+      console.log(detailsAnimationTime);
       /* divide into two functions : up and down - so if can be on which started not run every frame */
       function scrollDownStep(timeStamp: DOMHighResTimeStamp): void {
         if (start === undefined){
@@ -111,7 +115,7 @@ export function AnimatedDetailsSummary({children, rootContext}: AnimatedDetailsS
           const elapsed = timeStamp - start;  
           if(previousTimeStamp !== timeStamp){
             const count: number = Math.min(currentScroll + (scrollIncrement * elapsed), scrollTarget);
-            scrollableDiv.scroll({left: 0, top: count, behavior: "auto"});
+            scrollableDiv.scroll({left: 0, top: count, behavior: "auto"});            
             if (count === scrollTarget) {done = true;}
           }
           if (elapsed < detailsAnimationTime) {
@@ -173,12 +177,6 @@ export function AnimatedDetailsSummary({children, rootContext}: AnimatedDetailsS
 
   /* on init pull transition time */
   useEffect(() => {
-    const detailsElement = document.getElementsByClassName("animatedDetails")[0];
-    if(detailsElement){
-      const detailsStyle = getComputedStyle(detailsElement);
-      /* need to remove s then convert to float than multiple by 1000 than make int */
-      detailsAnimationTime = Math.floor(parseFloat(detailsStyle.transitionDuration.replace('s',''))*1000);
-    }
     if(!RootContext.headerIsShrunk && summaryElementRef.current){
       summaryElementRef.current.addEventListener("click", () => {RootContext.setHeaderIsShrunk(true)}, { signal: clickListenerAbort.current.signal });
     }
