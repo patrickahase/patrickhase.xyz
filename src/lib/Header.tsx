@@ -105,7 +105,7 @@ function HeaderLogo({headerIsShrunk}: HeaderLogoProps){
   )
 } */
 
-function NavOrnament() {
+/* function NavOrnament() {
   return(
     <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <path transform="rotate(0 50 50)"
@@ -133,6 +133,19 @@ function NavOrnament() {
                             A 22,22 0,1,1 45,0
                             L 50,10
                             z" />
+    </svg>
+  )
+} */
+
+function NavOrnament() {
+  return(
+    <svg className="navOrnament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+				 >
+                  <path transform="rotate(0 50 50)" vectorEffect="non-scaling-stroke" strokeWidth={2}
+                        d=" M 25,40
+                            Q 50,60 75,40
+                            " />
+                  
     </svg>
   )
 }

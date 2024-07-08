@@ -15,7 +15,7 @@ export const projectList: projectType[] = [
   {
     id: "room2-at-BLEED",
     startOpen: false,
-    title: "room2@BLEED",
+    title: "room2 (@BLEED)",
     publisher: "Arts House",
     year: "2022",
     role: <>Technical Direction and Co-Creator w/ <span className="noBreak">Anuraag Bhatia</span></>,
@@ -24,14 +24,15 @@ export const projectList: projectType[] = [
       <>
         <p>
           <em>room2</em> was a pair of works, <em>live</em> and <em>async</em>, co-created with Anuraag 
-          Bhatia and commissioned by Arts House as part of the international BLEED festival. <em>room2 live</em> 
-          was a series of durational interactive live performances by four different sets of cross-disciplinary 
-          creative collaborations curated by Bhatia and myself. <em>room2 async</em> consisted of nine unique 
-          cycles of interactive audio-visual-textural work, with music provided by a range of contributors, 
-          words provided by Bhatia and visuals provided by myself. The works were presented through a custom 
-          interactive platform, including user interfaces and underlying technical structures, which I implemented 
-          with additional contributions by <a className="noBreak" href="https://localtime.place/" target="_blank">Kirby Fary</a>.
+          Bhatia and commissioned by Arts House as part of BLEED (Biennial Live Event in the Everyday Digital) 2022. 
+					Both of the works, as detailed below, were presented through a custom interactive web platform, including UI 
+					and server structures designed and implemented by myself, with additional contributions  
+					from <a className="noBreak" href="https://localtime.place/" target="_blank">Kirby Fary</a>.
         </p>
+				<p>
+					<em>room2 live</em> was a series of curated interactive performances across sound, visuals and text by four different sets 
+					of creative collaborations.
+				</p>
         <p>
           <em>room2 live</em> contributers:&nbsp;
           <a className="noBreak" href="https://ambydowns.bandcamp.com/" target="_blank">amby downs</a>,&nbsp; 
@@ -50,6 +51,10 @@ export const projectList: projectType[] = [
           <span className="noBreak"><a href="http://www.kategeck.com/" target="_blank">Kate Geck</a> (poster)</span> &&nbsp;
           <span className="noBreak"><a href="https://localtime.place/" target="_blank">Kirby Fary</a> (chat mod)</span>
         </p>
+				<p>
+					<em>room2 async</em> consisted of nine different interactive audio-visual-textural works, with music provided by a range 
+					of contributors, words provided by Bhatia and visuals provided by myself.
+				</p>
         <p>
           <em>room2 async</em> contributers:&nbsp;
           <a className="noBreak" href="https://daisart.bandcamp.com/" target="_blank">j</a>,&nbsp; 
@@ -62,9 +67,12 @@ export const projectList: projectType[] = [
           <a className="noBreak" href="https://www.instagram.com/r_rebeiro/" target="_blank">R. Rebeiro</a> &&nbsp;
           <a className="noBreak" href="http://www.hannahwu.com.au/" target="_blank">Hannah Wu</a>&nbsp;
         </p>
+				<p>
+					<em style={{textDecoration: 'underline'}}>all iterations of room2 are intentially emphemeral so limited documentation exists</em>
+				</p>
       </>,
 
-    extLink: "https://bleedonline.net/program/room2/#live",
+    extLink: "https://room2.fm/",
     tech: "Javascript, React, WebGL, Express, SQL & Azure Streaming",
     githubURL: "https://github.com/patrickahase/room2.fm"
   },
@@ -79,7 +87,7 @@ export const projectList: projectType[] = [
 
     description: 
       <p>
-      <em>being, a body</em> is an audio-visual-textual essay by Anuraag Bhatia and commissioned 
+      <em>being, a body</em> is an audio-visual-textual essay by Anuraag Bhatia, commissioned 
       by Liminal and supported by Multicultural Arts Victoria as part of its Ahead of the Curve 
       Commisions. I implemented Bhatia’s concept into a custom dynamic audio mixing system for 
       web browsers that allows for users to scroll between a selection of music while they read 
@@ -100,7 +108,7 @@ export const projectList: projectType[] = [
     
     description: 
       <p>
-        <em>time absorbs the feelings it produces</em> is an interative digital essay 
+        <em>time absorbs the feelings it produces</em> is an interactive digital essay 
         by <a href="https://nikkilam.info/" target="_blank">Nikki Lam</a> and commissioned by Arts House 
         as part of their Makeshift Publics critical response series. I implemented Lam’s concept 
         into an interactive browser based format developed to provide a custom approach to non-linear 
@@ -125,7 +133,7 @@ export const projectList: projectType[] = [
         <em>thelongesthum.world</em> is an interactive browser based voice work 
         by <a href="https://www.tinastefanou.com/" target="_blank">Tina Stefanou</a> and commissioned by Cementa 
         as part of their online Spirit of ‘21 Festival. I implemented Stefanou's concept into a browser based 
-        format including a custom audio system that modulates over 21 years, procedurally animated interactive 
+        format including a custom audio system that modulates over a period of 21 years, procedurally animated interactive 
         visualisation and a back end system for remotely storing and retrieving the collected hums. Additional form 
         design was contribtued by Alisa Blakeney.
       </p>,
@@ -167,12 +175,12 @@ export const projectList: projectType[] = [
     description: 
       <>
         <p>
-          <em>room2.fm</em> is an ephemeral browser based interactive audio-visual-textural work co-created with 
+          <em>room2.fm</em> is a browser based interactive audio-visual-textural work co-created with 
           Anuraag Bhatia and originally commissioned by <a className="noBreak" href="https://www.vidyasrajan.com/" target="_blank">Vidya Rajan</a>&nbsp;
-          for Darebin Arts' program Exhibiting Culture Online. The work consisted of nine unique cycles of interactive 
-          audio-visual-textural work, with music provided by a range of contributors, words provided by Bhatia and visuals 
-          provided by myself. room2.fm was presented through a custom interactive platform, including user interfaces and 
-          underlying technical structures, which I implemented. This first run was capped off with a live event presented 
+          for Darebin Arts' program Exhibiting Culture Online. The site presented a series of nine interactive 
+          audio-visual-textural pieces, with music provided by a range of contributors, with writing provided by Bhatia and visuals 
+          provided by myself. room2.fm was presented through a custom interactive web platform, including UI 
+					and server structures designed and implemented by myself. Its initial run was capped off with a live event presented 
           through the online interface.
         </p>
         <p>
@@ -221,6 +229,9 @@ export const projectList: projectType[] = [
           <a className="noBreak" href="https://pandawong.mmm.page/" target="_blank">Panda Wong</a>, &&nbsp;
           <a className="noBreak" href="https://mochamas.itch.io/" target="_blank">Mohamed Chamas</a>&nbsp;
         </p>
+				<p>
+					<em style={{textDecoration: 'underline'}}>all iterations of room2 are intentially emphemeral so limited documentation exists</em>
+				</p>
       </>,
 
     extLink: "https://room2.fm/",    
@@ -244,7 +255,7 @@ export const projectList: projectType[] = [
         design and its implemention.
       </p>,
 
-    extLink: "https://room2.fm/",    
+    extLink: "https://www.objectanimacy.patrickhase.xyz/",    
     tech: "Javascript, React & WebGL"
   },
 
@@ -268,7 +279,7 @@ export const projectList: projectType[] = [
         <a href="https://youtu.be/GJ3FLLoVWjE?si=bQGasGxrzg5rdHo7" target="_blank">Rebel Yell - Next Exit</a>
       </>,
 
-    extLink: "https://room2.fm/",    
+    extLink: "",    
     tech: "Premiere, After Effects, Cinema 4D & Unity3D"
   },
 
@@ -288,7 +299,7 @@ export const projectList: projectType[] = [
         visuals with additional 3D modeling, textures and animations contributioned by Lanyca Leng and Giorgia Fichera.
       </p>,
 
-    extLink: "https://room2.fm/",    
+    extLink: "",    
     tech: "Unity3D & Ableton Live"
   }
 ]

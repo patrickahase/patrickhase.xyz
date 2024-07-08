@@ -32,9 +32,9 @@ export default function AboutPage(){
           </figcaption>
         </figure>
         <p>
-          I'm a media artist and researcher focused on digital interaction design in full-stack audio/visual web development.
-          My practice often leads to the construction of playful and collaborative browser-based interfaces grounded through my 
-          previous experiences working in music production & performance, 3D animation and VR.
+          hi :) i'm an artist and researcher, mainly doing digital interaction and system design for audio/visual internet stuff.
+          i like to collaborate with others, usually to make playful sites for web browsers that draw on my past experiences
+					working in music production & performance, 3D animation and VR.
         </p>
         <p>
           I live and work on unceded <a href='https://www.wurundjeri.com.au/' target='_blank'>Wurundjeri</a> Country. Always 
