@@ -1,2 +1,5 @@
-# patrickhase.xyz
-This is a clean slate for my new personal site
+To Do
+
+- scroll on margins
+
+- fix alignment with tabs
